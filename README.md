@@ -2,7 +2,7 @@
 A collection of definitions, theorems, lemmas, corollaries and their proofs for Math 311, taught by Professor Swindle at Washington and Lee University
 
 ## Introduction
-	During a 1985 Lecture, Paul Erdos stated, "You don't have to believe in God, but you should believe in *The Book*." Many colleagues of this brilliant and uncouth
+During a 1985 Lecture, Paul Erdos stated, "You don't have to believe in God, but you should believe in *The Book*." Many colleagues of this brilliant and uncouth
 mathematician mention his murmuring of *The Book*: God's collection of the most efficient, and thus beautiful, proofs for each mathematical theorem.
 
 Though, the mathematical community has not gone to the extent of compiling the proofs for every known theorem, there have been attempts. *Proofs from THE BOOK*, the 1998
