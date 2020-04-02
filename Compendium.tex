@@ -1,0 +1,1165 @@
+ \documentclass[11pt]{book}
+\usepackage{geometry}                % See geo \documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{color, soul}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{epigraph}
+%%%%https://tex.stackexchange.com/questions/122848/tikz-the-pretty-boxes-to-frame-the-theorems-lemma-proposition-etc
+\usepackage[utf8]{inputenc}
+\UseRawInputEncoding %remove this if experiencing typesetting issues
+\usepackage[framemethod=tikz]{mdframed}
+\usetikzlibrary{calc}
+%\usepackage{chngcntr}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+%%%%%%%%%%%%%%%%%
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\isom}{\cong}
+\newcommand{\setm}{\smallsetminus}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\tri}{\triangle}
+
+\newcommand{\bfi}{\mathbf i}
+\newcommand{\bfj}{\mathbf j}
+\newcommand{\bfk}{\mathbf k}
+\newcommand{\br}{\mathbf r}
+\newcommand{\bv}{\mathbf v}
+\newcommand{\bu}{\mathbf u}
+\newcommand{\bw}{\mathbf w}
+\newcommand{\bF}{\mathbf F}
+
+\newcommand{\va}{\vec{a}}
+\newcommand{\vb}{\vec{b}}
+\newcommand{\vc}{\vec{c}}
+\newcommand{\ve}{\vec{e}}
+\newcommand{\vi}{\vec{i}}
+\newcommand{\vj}{\vec{j}}
+\newcommand{\vk}{\vec{k}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vw}{\vec{w}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vr}{\vec{r}}
+\newcommand{\vF}{\vec{F}}
+\newcommand{\vzero}{\vec{0}}
+
+\newcommand{\horline}{\noindent\rule{14.25cm}{0.6pt}\\}
+% counters
+\newcounter{theorem}
+\newcounter{lemma}
+\newcounter{definition}
+\newcounter{example}
+\newcounter{corollary}
+
+\counterwithin{theorem}{section}
+\counterwithin{lemma}{section}
+\counterwithin{definition}{section}
+\counterwithin{example}{section}
+\counterwithin{corollary}{section}
+
+% names for the structures
+\newcommand\theoname{Theorem}
+\newcommand\lemmname{Lemma}
+\newcommand\defname{Definition}
+\newcommand\exname{Example}
+\newcommand\corname{Corollary}
+
+\makeatletter
+% mdf key for the eventual notes in the structures
+\def\mdf@@mynote{}
+\define@key{mdf}{mynote}{\def\mdf@@mynote{#1}}
+
+
+% style for theorems
+\mdfdefinestyle{mytheo}{
+settings={\refstepcounter{theorem}},
+linewidth=1pt,
+innertopmargin=1.5\baselineskip,
+roundcorner=10pt,
+backgroundcolor=blue!05,
+linecolor=orange,
+singleextra={
+  \node[xshift=10pt,thick,draw=blue,fill=blue!20,rounded corners,anchor=west] at (P-|O) %
+  {\strut{\bfseries\theoname~\thetheorem}\ifdefempty{\mdf@@mynote}{}{~(\mdf@@mynote)}};
+},
+firstextra={
+  \node[xshift=10pt,thick,draw=blue,fill=blue!20,rounded corners,anchor=west] at (P-|O) %
+  {\strut{\bfseries\theoname~\thetheorem}\ifdefempty{\mdf@@mynote}{}{~(\mdf@@mynote)}};
+}
+}
+
+% style for lemmas
+\mdfdefinestyle{mylemm}{
+settings={\refstepcounter{lemma}},
+linewidth=1pt,
+innertopmargin=1.5\baselineskip,
+roundcorner=10pt,
+backgroundcolor=red!05,
+linecolor=red!70!black,
+singleextra={
+  \path let \p1=(P), \p2=(O) in
+  node[thick,draw=green!40!black,fill=green!20,rounded corners] at (P-|0.5*\x2+0.5*\x1,0) %
+  {\strut{\bfseries\lemmname~\thelemma}\ifdefempty{\mdf@@mynote}{}{~(\mdf@@mynote)}};
+},
+firstextra={
+  \path let \p1=(P), \p2=(O) in
+  node[thick,draw=green!40!black,fill=green!20,rounded corners] at (P-|0.5*\x2+0.5*\x1,0) %
+  {\strut{\bfseries\lemmname~\thelemma}\ifdefempty{\mdf@@mynote}{}{~(\mdf@@mynote)}};
+}
+}
+
+% style for definitions 
+\mdfdefinestyle{mydef}{
+settings={\refstepcounter{definition}},
+linewidth=1pt,
+innertopmargin=1.5\baselineskip,
+roundcorner=10pt,
+backgroundcolor=orange!15,
+linecolor=red!70!black,
+singleextra={
+  \path let \p1=(P), \p2=(O) in
+  node[xshift = 10pt, thick,draw=green!40!black,fill=orange!5,rounded corners,anchor=west] at (P-|O) %
+  {\strut{\bfseries\defname~\thedefinition}\ifdefempty{\mdf@@mynote}{}{~(\mdf@@mynote)}};
+},
+firstextra={
+  \path let \p1=(P), \p2=(O) in
+  node[thick,draw=orange!15!black,fill=orange!15,rounded corners, anchor=west] at (P-|0) % 
+  {\strut{\bfseries\defname~\thedefinition}\ifdefempty{\mdf@@mynote}{}{~(\mdf@@mynote)}};
+}
+}
+
+% style for examples
+\mdfdefinestyle{myex}{
+settings={\refstepcounter{example}},
+linewidth=1pt,
+innertopmargin=1.5\baselineskip,
+roundcorner=10pt,
+backgroundcolor=white!15,
+linecolor=blue!70!black,
+singleextra={
+  \path let \p1=(P), \p2=(O) in
+  node[xshift = 10pt, thick,draw=blue!40!black,fill=blue!5,rounded corners] at (P-|0.5*\x2+0.5*\x1,0) %
+  {\strut{\bfseries\exname~\theexample}\ifdefempty{\mdf@@mynote}{}{~(\mdf@@mynote)}};
+},
+firstextra={
+  \path let \p1=(P), \p2=(O) in
+  node[thick,draw=blue!15!black,fill=white!15] at (P-|0.5*\x2+0.5*\x1,0) % 
+  {\strut{\bfseries\exname~\theexample}\ifdefempty{\mdf@@mynote}{}{~(\mdf@@mynote)}};
+}
+}
+
+% style for examples
+\mdfdefinestyle{mycor}{
+settings={\refstepcounter{corollary}},
+linewidth=1pt,
+innertopmargin=1.5\baselineskip,
+roundcorner=10pt,
+backgroundcolor=white!15,
+linecolor=blue!70!black,
+singleextra={
+  \path let \p1=(P), \p2=(O) in
+  node[xshift = 10pt, thick,draw=blue!40!black,fill=blue!5,rounded corners] at (P-|0.5*\x2+0.5*\x1,0) %
+  {\strut{\bfseries\corname~\thecorollary}\ifdefempty{\mdf@@mynote}{}{~(\mdf@@mynote)}};
+},
+firstextra={
+  \path let \p1=(P), \p2=(O) in
+  node[thick,draw=blue!15!black,fill=white!15] at (P-|0.5*\x2+0.5*\x1,0) % 
+  {\strut{\bfseries\corname~\thecorollary}\ifdefempty{\mdf@@mynote}{}{~(\mdf@@mynote)}};
+}
+}
+
+% some auxiliary environments
+\newmdenv[style=mytheo]{theor}
+\newmdenv[style=mylemm]{lemm}
+\newmdenv[style = mydef]{defin}
+\newmdenv[style = myex]{examp}
+\newmdenv[style = myprf]{prf}
+\newmdenv[style = mycor]{cor}
+% the actual environments
+\newenvironment{theorem}[1][]
+	{\begin{theor}[mynote=#1]}
+	{\end{theor}}
+\newenvironment{lemma}[1][]
+	{\begin{lemm}[mynote=#1]}
+	{\end{lemm}}
+\newenvironment{definition}[1][]
+	{\begin{dein}[mynote=#1]}
+	{\end{defin}}
+\newenvironment{example}[1][]
+	{\begin{examp}[mynote=#1]}
+	{\end{examp}}
+\newenvironment{corollary}[1][]
+	{\begin{cor}[mynote=#1]}
+	{\end{cor}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\rref}{rref}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\im}{im}
+\newcommand{\rank}{\text{rank}}
+
+\newcommand{\bb}{\begin{bmatrix}}
+\newcommand{\eb}{\end{bmatrix}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\QED}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+%%%%%%%%%%%%%%%epigrapghs
+
+\usepackage{etoolbox}
+\makeatletter
+\newlength\epitextskip
+\pretocmd{\@epitext}{\em}{}{}
+\apptocmd{\@epitext}{\em}{}{}
+\patchcmd{\epigraph}{\@epitext{#1}\\}{\@epitext{#1}\\[\epitextskip]}{}{}
+\makeatother
+
+\setlength\epigraphrule{0pt}
+\setlength\epitextskip{2ex}
+\setlength\epigraphwidth{.8\textwidth}
+
+\newcommand{\ds}{\displaystyle}
+%%%%%%%%%%%%%%%%%
+
+
+\title{{\bf \href{https://www.overleaf.com/read/gyqrjdfnjyvb}{The Compendium}}}
+\author{Alexander Caines}
+\date{0.0.0}
+\begin{document}
+\maketitle
+
+\newpage
+\epigraph{Perhaps my old age and fearfulness deceive me, but I suspect that the human species---the unique species---is
+about to be extinguished, but the Library will endure\dots}{\href[pdfnewwindow=true]{https://en.wikipedia.org/wiki/Jorge_Luis_Borges_and_mathematics}{Jorge Luis Borges}, \href{https://ia800607.us.archive.org/5/items/TheLibraryOfBabel/babel.pdf}{\emph{The Library of Babel}}}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introduction}
+
+During a 1985 lecture \href{https://en.wikipedia.org/wiki/Paul_Erd\%C5\%91s}{Paul Erd\H{o}s} stated ``You don't have to believe in God, but you should
+    believe in \emph{The Book}.'' Many colleagues of this brilliant and uncouth mathematician mention
+    his murmurings of \emph{The Book}: God's\footnote{If one is given\dots} collection of the most efficient,
+    and thus beautiful proofs for each mathematical theorem. 
+
+    Though the mathematical community has not gone to
+    the extent of compiling the proofs for every known theorem, there have been attempts. \href{https://proofsfromthebook.github.io/}{\emph{Proofs from THE BOOK}},
+    the 1998 book by \href{https://www.quantamagazine.org/gunter-ziegler-and-martin-aigner-seek-gods-perfect-math-proofs-20180319/}{Martin Aigner and G{\"u}nter Ziegler},
+    a collection of the most elegant proofs from the fields of
+    number theory, geometry, analysis, combinatorics, and graph theory. Recently, Evan Chen---a retired math Olympian and
+    current\footnote{as of 2020} math PhD at MIT---has created an \emph{exposition} titled
+    \href{https://web.evanchen.cc/napkin.html}{The Napkin}. The (infinite) Napkin is his attempt to compile the most 
+    essential statements one needs to understand the beauty and importance of mathematics. It features overviews of
+    a myriad of different subjects studied by most undergraduate mathematicians. The Napkin provides the curious a non-trivial
+    foundation of their subject of interest; succeeding in honing their mathematical abilities and providing a gateway to 
+    more profound investigations.
+
+    Additionally, over the past decade, communities of open-source programmers have created multiple chrestomathy websites
+    such as \href{http://rosettacode.org/wiki/Rosetta_Code}{Rosetta Code} and the 
+    \href{https://www.algorithm-archive.org/}{Algorithm archive} that 
+    aggregate elegant computer programs for different algorithms.
+    Given the Curry-Howard correspondence---a relationship between mathematical proofs and computer programs---I 
+    thought that this would be worth mentioning. 
+    
+
+    All, in all, \emph{that} is what this document tries to be (though with a far more restricted scope and much less precision).
+    I hope to compile every theorem, lemma, corollary,
+and definition covered over the course of MATH-311. There will be a table of
+contents which indexes the statements as they appear in \textbf{\href{https://www.academia.edu/35915359/From_Calculus_to_Analysis_-_Steen_Pedersen_Springer_}{From Calculus to Analysis}}\footnote{Register---\emph{for free}---and it is yours.}.
+Definitions, in their totality, will be enumerated first and will be subsequently followed by 
+the theorems that we have proved or covered thus far.
+Any additional propositions that would otherwise be in the compendium will be 
+added at the appropriate time and made note of. Feel free to edit and comment by footnote.
+This document serves as a palimpsest for our study of real analysis this term.
+
+	Finally, this document is meant to be pedagogical. So I will attempt to provide commentary and references to helpful,
+	auxiliary resources when I can. Have fun!
+
+	P.S. \dots \textcolor{red}{\hl{Do note, that if you want to see the hyper-links in this document, you must download the pdf!}} Especially in this introduction, I have linked to many extra-curricular
+sources, which I enjoy visiting or enjoyed having visited. If you have any suggestions, don't be afraid to email me
+at \href{mailto:cainesa21@mail.wlu.edu}{cainesa21@mail.wlu.edu} or \href{mailto:alecaines@gmail.com}{alecaines@gmail.com}.
+\newpage
+
+\section*{Versioning}
+The most critical part of this project is its capacity as an open source document. Given the assumption that most of the my peers are not acquainted with 
+\href{https://github.com/features#team-management}{GitHub}, a more rudimentary version control system must be developed in order to maintain current and alternative 
+versions of \emph{The Compendium}. Because of the nature of this project, future versions of \emph{The Compendium} will not see great structural changes. Most changes
+to the document will entail the addition or editing of mathematical statements. Because new definitions are anticipated to be added through the rest of the term (the 
+release date is 4/2/2020), we will avoid a \href{https://en.wikipedia.org/wiki/Unary_numeral_system}{unary versioning} system as employed by the TeX typesetting system.
+
+\subsection*{Versioning Schema}
+I propose the following schema: A major version change will entail a change in structure of the document. A minor version change will entail the correction a previously
+invalid proof or definition, as well as spelling errors. Patch version changes will entail the addition of new definitions and theorems. If the number of patches explodes
+in the near future, I will implement a modulo on the patch version and record the multiplicity of patches in an appended digit to the version number.
+
+\subsection*{Submitting Changes}
+Each individual who intends to edit their copy of \emph{The Compendium} shall make the edits to the \LaTeX document and resubmit the TeX file to me via email. In the 
+email, make note of 
+	\begin{center}
+		\begin{enumerate}
+			\item[1.] The mathematical statements (theorems, proofs, definitions, etc\dots) changed\\
+			\item[2.] The line numbers at which the changes took place.\\
+			\item[3.] A brief description (need not be elaborate at all) of the changes.
+		\end{enumerate}
+	\end{center}
+	Given that I believe the changes are appropriate, I will then alter the version of \emph{The Compendium} and its state. I will then release the \href{https://www.overleaf.com/read/gyqrjdfnjyvb}{newest version} on 
+	Overleaf, for all to access. All version changes will be recorded at after the section titled \textbf{Theorems, Lemmas, Corollaries, and Proofs}. Though, do note,
+	no one is stopping you from hosting your own version! If you would like to release your own version of \emph{The Compendium}, then reset the version to $0.0.0$,
+	label yourself as the co-author on the title, and \LaTeX away!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\tableofcontents
+\newpage
+\addtocontents{toc}{\setcounter{tocdepth}{3}}
+\section{Definitions}
+	\subsection{Infinite Decimal}
+		\begin{defin}
+			An \textbf{infinite decimal} is an expression of the form $\pm d_0.d_1.d_2\dots,$ where
+			$d_0 \in \mathbb{N}_0$ and $d_k \in \{0,1,2,3,4,5,6,7,8,9\}$ for $k \geq 1$.
+		\end{defin}
+	\subsubsection{Repeating infinite decimal}
+		\begin{defin}
+			An \emph{infinite decimal} is \textbf{repeating} if there are $k,m \in \N \ni d_{j+m} = d_j, \forall j \geq k$
+		\end{defin}
+		\begin{examp}
+			1.67234523452345\dots := 1.6$\overline{2345}$,
+			where $k = 3, m = 4,$ and \\$j := \text{ any arbitrary natural number greater than $k$}$.
+		\end{examp}
+	\subsection{Finite Decimal}
+		\begin{defin}
+			A \textbf{finite decimal} is a decimal of the form:
+			$d_0.d_1d_2\dots d_n := d_0.d_1d_2\dots \overline{0}$
+		\end{defin}
+	\subsection{Irrational number}
+		\begin{defin}
+			An \textbf{irrational number} is a real number that is not rational.
+		\end{defin}
+		\begin{examp}
+			Let $x := 0.101001000100001\dots$.Note that there is no consistent repeating string of digits in $x$. 
+			So, $x$ is irrational.
+		\end{examp}
+
+	\subsection{Density}
+		\begin{defin}
+			Let $A$ and $B$ be sets. We say $A$ is \textbf{dense} in $B$ if any interval centered at a point in $B$
+			contains at least one point from $A$.
+			In discrete terms, $\forall b \in B, \forall r > 0, \exists a \in A \ni a \in (b - r, b + r)$\footnote{Otherwise written $|a-b| < r$.}.
+		\end{defin}
+	\subsection{Accumulation Point}
+		\begin{defin}
+			Let $D \subseteq \R$ and $a \in \R$. $a$ is an \textbf{accumulation point} of $D$ if $\forall \varepsilon > 0,
+			\exists x \in D \ni 0 < |x - a | < \varepsilon$.
+		\end{defin}
+		\begin{examp}
+			\textbf{Claim:} 0 is an accumulation point of $(-1,1)$.\hfill\break
+			\textbf{Proof:} Let $\varepsilon > 0$ be given. Suppose $\varepsilon \leq 1$. Let $x := \frac{\varepsilon}{2}$.
+			Then, $0 < x = |x - 0| < 1$. So, $x \in (-1,1)$. Note, $x = \frac{\varepsilon}{2} < \varepsilon$. So, 
+			$0 < |x - 0| < \varepsilon$. \QED
+			\horline
+			\textbf{Comments:} The above proves to be an interesting result because given any $m > 0$, if $0 < r \leq m$, 
+			then $\exists x \in D \ni 0 < |x - a| < r$. Consequently, $a$ must be an accumulation point of $D$.
+		\end{examp}
+	\subsection{Convergence}
+		\begin{defin}
+			Let $D \subseteq \R$, $a,L \in \R$, $f: D \to \R$, and $a$ be an accumulation point of $D$. We say $f$
+			\textbf{converges} to $L$ as $x$ approaches $a$ in $D$ provided $\forall \varepsilon > 0$, $\exists \delta > 0 \ni
+			\forall x \in D, 0 < |x - a| < \delta \implies |f(x) - L| < \varepsilon$.
+		\end{defin}
+		\begin{examp}
+			\textbf{Claim:} $\displaystyle\lim_{x \to 4}{f(x) = 7}$.\\
+			\textbf{Proof:} Pick $\varepsilon > 0$ and let $\delta - \frac{\varepsilon}{3}$. Then, $\forall x \in \R$,
+				\begin{center}
+					\begin{math}
+						\begin{aligned}
+							|f(x) - 7| & = |3x - 12|\\
+							& = 3|x - 4|\\
+							& < 3\cdot\bigg(\frac{\varepsilon}{3}\bigg)\\
+							& = \varepsilon
+						\end{aligned}
+					\end{math}
+				\end{center}
+				\QED
+		\end{examp}
+	\subsection{Local Behavior}
+		\begin{defin}
+			Let $D \subseteq \R$ and $a$ an accumulation point in $D$ be given. Additionally, let $f: D \to \R$ where $f$
+			has \textbf{local behavior} near $a$ if $\exists \delta > 0 \ni f(x)$ has the property, $\forall x \in (a - \delta, a + \delta)$.
+		\end{defin}
+	\subsection{Restriction}
+		\begin{defin}
+			Let $D \subseteq \R$ and $f: D \to \R$. If $E \subseteq D$, we define the \textbf{restriction} of $f$ to $E$ to be the function $f\Big|_{E}$ with domain
+			$E$ and having the same values as $f$ on $E$. Formally, $$f\Big|_E:E \to \R, f\Big|_E(x) = f(x), \forall x \in E$$
+			Note, $f\Big|_E(x)$ is undefined $\forall x \in D\subseteq E$.
+		\end{defin}
+	\subsection{Limit at infinity}
+		\begin{defin}
+			$\displaystyle\lim_{x \to \infty}{f(x) = L}$ is defined when $\forall \varepsilon > 0$, $\exists N \in \R, \forall x \in D, N < x \implies |f(x) - L| <
+			\varepsilon$.
+		\end{defin}
+		\begin{examp}
+			\textbf{Claim:} $\displaystyle\lim_{x \to \infty}{\frac{1}{x^2} = 0}$.\hfill\break
+			\textbf{Proof:} Let $\varepsilon > 0$ be given. We want to find $N$ such that $x > N \implies \frac{1}{x^2} < \varepsilon$. Note, $x^2 > \frac{1}{\varepsilon}$.
+			Let $N := \frac{1}{\sqrt{\varepsilon}}$. Therefore, if $ x > N \Leftrightarrow x > \frac{1}{\sqrt{\varepsilon}}$, then $x^2 > \frac{1}{\varepsilon}$.
+			So, $|\frac{1}{x^2} - 0| = \frac{1}{x^2} < \varepsilon$.
+			\QED
+		\end{examp}
+	\subsection{Sequence}
+		\begin{defin}
+			A \textbf{sequence} of real numbers is a function $x:\N \to \R$ denoted $(x)_{n = a}^b$ where $x_n, \forall n \in [a,b]$ are the element of the 
+			sequence at from indices $a$ to $b$.
+		\end{defin}
+	\subsection{Bounded sequence}		
+		\begin{defin}
+			A sequence is \textbf{bounded} if there is a $k$ such that $|x_n| \leq k, \forall n$.
+		\end{defin}
+	\subsection{Null Sequence}
+		\begin{defin}
+			A sequence $x_n$ is \textbf{null} if given any $\varepsilon > 0$, $\exists N \in \N \ni \forall n \in \N^{>N}, n \implies |x_n| < \varepsilon$.\hfill\break
+			\horline
+			\textbf{Comment:}
+				\begin{enumerate}
+					\item[1.] This means that $x_n \to 0$ if $x_n$ is null.
+					\item[2.] This also means $x_n \to p$ if and only if $(x_n - p)$ is null.
+				\end{enumerate}
+			
+		\end{defin}
+		\newpage
+		\begin{examp}
+			\textbf{Claim:} $(1 + (-1)^n)$ is not null.\hfill\break
+			\textbf{Proof:} Note, if a sequence $(x)$ is not null, then $\exists \varepsilon > 0 \ni \forall N \in \N, \exists n \in \N$ where $n > N$ and $|x_n| \geq
+			\varepsilon$. Let $x_n = 1 + (01)^n, \forall n$. So, $|x_n| = |1+(-1)^n| = \begin{cases} 0 & \text{ when} n \text{ is odd.}\\
+				1 & \text{ when} n \text{ is even.}\end{cases}$. Choose $\varepsilon := 1$ and $N \in \N$ be arbitrary. Now, choose $n := 2N$. Then, 
+				$n > N$ trivially. Additionally, $|1 + (-1)^n| = |1 + (-1)^{2N}| = 2 > 1$.
+				\QED
+		\end{examp}
+	\subsection{Continuous function}
+		\begin{defin}
+			Let $D \subseteq \R$. A function$f: D \to \R$ is \textbf{continuous} at a point $a \in D$ if $\varepsilon > 0, \exists \delta > 0 \ni \forall x \in D$,
+			$|x - a| < \delta \implies |f(x) - f(a)| < \varepsilon$.\hfill\break
+			\horline
+			\textbf{Comment:} Note, if $a$ is an accumulation point, then $\displaystyle\lim_{x \to a}{f(x) = f(a)}$. If $a$ is not an accumulation point,
+			but $f$ is continuous, then $|x - a| < \delta \implies x = a$. Such an $a$ is called an \textbf{isolated point}.
+		\end{defin}
+	\subsection{Removable Discontinuity}
+	\label{subsec:removablediscontinuity}
+		\begin{defin}
+			Suppose $f$ is discontinuous at $a$. Then, $f$ has a \textbf{removable discontinuity} at $a$ if there is a function $g$ such that $g$ is continuous
+			at $a$ and $g(x) = f(x), \forall x \neq a$.
+		\end{defin}
+		\begin{examp}
+			\textbf{Claim:} $f(x) := \frac{x^2 -1}{x-1}$ has a removable discontinuity at $a = 1$.\hfill \break
+			\textbf{Proof:} Let $g(x) := x + 1$. Then $g(x) = f(x), \forall x \neq 1$ and $g$ is continuous at $x = 1$. 
+			So, $f$ has a removable discontinuity at $x = 1$.
+
+		\end{examp}
+	\newpage
+	\subsection{Right-Sided Continuity}
+	\label{subsec:rightsidedcontinuity}
+		\begin{defin}
+			Let $D \subseteq \R$, $f: D \to \R$, and $a \in D$. $f$ is \textbf{continuous from the right} at $a$ if $\forall \varepsilon > 0, \exists \delta > 0 \ni
+			\forall x \in D, 0 < | x - a| < \delta \implies |f(x) - f(a)| < \varepsilon$.
+		\end{defin}
+	\subsection{Left-Sided Continuity}
+	\label{subsec:leftsidedcontinuity}
+		\begin{defin}
+			Let $D \subseteq \R$, $f: D \to \R$, and $a \in D$. $f$ is \textbf{continuous from the left} at $a$ if $\forall \varepsilon > 0, \exists \delta > 0 \ni
+			\forall x \in D, -\delta < x - a < 0 \implies |f(x) - f(a) | < \varepsilon$.
+		\end{defin}
+	\subsection{Upper Bound}
+	\label{subsec:upperbound}
+		\begin{defin}
+			Let $A \subseteq \R$. A real number $u \in \R$ is an \textbf{upper bound} for $A$ if each $a \in A \implies a \leq u$.
+		\end{defin}
+	\subsection{Lower Bound}
+	\label{subsec:lowerbound}
+		\begin{defin}
+			Let $A  \subseteq \R$. A real number $u \in \R$ is a \textbf{lower bound} for $A$ if each $a \in A \implies a \geq u$. 
+		\end{defin}
+	\subsection{Maximum}
+	\label{subsec:maximum}
+		\begin{defin}
+			Let $A \subseteq \R$. A real number $u \in \R$ is the \textbf{maximum} of $A$ if each $u \in A$ implies $u$ is an \hyperref[subsec:upperbound]{upper bound}
+			for $A$.
+		\end{defin}
+	\subsection{Minimum}
+	\label{subsec:minimum}
+		\begin{defin}
+			Let $A \subseteq \R$. A real number $u \in \R$ is the \textbf{minimum} of $A$ if $u \in A$ implies $u$ is a \hyperref[subsec:lowerbound]{lower bound} for $A$.
+		\end{defin}
+	\subsection{Supremum or Least Upper Bound}
+	\label{subsec:supremum}
+		\begin{defin}
+			Let $ \subseteq \R$ and $u \in $. $u$ is a \textbf{supremum} or \textbf{least upper bound} if $u$ is an \hyperref[subsec:upperbound]{upper bound}
+			of $A$ and no number smaller than $u$ is an upper bound.
+		\end{defin}
+	\subsection{Infimum or Greatest Lower Bound}
+	\label{subsec:infimum}
+		\begin{defin}
+			Let $A \subseteq \R$ and $u \in \R$. $u$ is an \textbf{infimum} or \textbf{greatest lower bound} if $u$ is a \hyperref[subsec:lowerbound]{lower bound} for
+			$A$ and no number larger than $u$ is a lower bound.
+		\end{defin}
+	\subsection{Intermediate Value Property}
+	\label{subsec:intermediatevalueproperty}
+		\begin{defin}
+			A subset $A \subseteq \R$ has the \textbf{intermediate value property} if $\forall x,y \in A$ and $t \in \R$, $x < t < y \implies t \in A$.
+		\end{defin}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Theorems, Lemmas, Corollaries, and Proofs %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\newpage
+	\subsection{Countable}
+	\label{subsec:countable}
+		\begin{defin}
+			A set is called \textbf{countable} if its elements can be enumerated by the naturals.
+		\end{defin}
+	\subsection{Increasing}
+	\label{subsec:increasing}
+		\begin{defin}
+			Let $I$ be some interval. A function $f: I \to \R$ is \textbf{increasing} if $\forall x,y \in I, x < y \implies f(x) \leq f(y)$.
+		\end{defin}
+	\subsection{Decreasing}
+	\label{subsec:decreasing}
+		\begin{defin}
+			Let $I$ be some interval. A function $f:I \to \R$ is \textbf{decreasing} if $\forall x,y \in I$, $x < y \implies f(x) \geq f(y)$. 
+		\end{defin}
+	\subsection{Monotone}
+	\label{subsec:monotone}
+		\begin{defin}
+			A function is \textbf{monotone} if it is either increasing or decreasing.
+		\end{defin}
+	\subsection{Jump Discontinuity}
+	\label{subsec:jumpdiscontinuity}
+		\begin{defin}
+			A \textbf{jump discontinuity} is defined when one-sided limits exist at a point $a$ but are not equal.
+		\end{defin}
+	\subsection{Bounded Function}
+	\label{subsec:bounded}
+		\begin{defin}
+			A function $f: D \to \R$ is \textbf{bounded} on $E \subseteq D$ if $\exists M \in \R \ni |f(x)| \leq M, \forall x \in E$.
+		\end{defin}
+	\subsection{Compact Interval}
+	\label{subsec:compact}
+		\begin{defin}
+			Suppose $a<b$ are real. A \textbf{compact interval} $I$ is a closed and bounded interval of the form $I := [a,b]$.
+		\end{defin}
+	\newpage
+	\subsection{Uniform Continuity}
+	\label{subsec:uniformcontinuity}
+		\begin{defin}
+			A function $f:D \to \R$ is \textbf{uniformly continuous} on $D$ if given any $\varepsilon > 0$, there is a $\delta > 0 \ni \forall x,y \in D, |x - y| 
+			< \delta \implies |f(x) - f(y)| < \varepsilon$.
+		\end{defin}
+		\begin{examp}
+			\textbf{Claim:} $f(x) := x^2$ is uniformly continuous on $D := \{x \in \R| |x| < 7 \}$.\hfill\break
+			\textbf{Proof:} Let $\varepsilon > 0$ be given. Note, $|x^2 - y^2| = |(x-y)||(x+y)|$. By the triangle inequality, $|x+y| \leq |x| + |y|$.
+			So, $|(x-y)||(x+y)| < 7 + 7 < 14$. So, let $\delta := \frac{\varepsilon}{14}$. Thus,
+				\begin{center}
+					\begin{math}
+						\begin{aligned}
+							|f(x) - f(y)| & = |x-y||x+y|\\
+							& = \frac{\varepsilon}{14} \cdot 14\\
+							& = 14
+						\end{aligned}
+					\end{math}
+				\end{center}
+				\QED
+		\end{examp}
+	\subsection{Differentiable}
+	\label{subsec:differentiable}
+		\begin{defin}
+			Let $D \subseteq \R$. A function $f: D \to \R$ is \textbf{differentiable} at $a \in D$ if $a$ is an accumulation point of $D$ with derivative $b$ gives,
+			$\forall \varepsilon > 0 \ni \forall x \in D, ) < |x -a|< \delta \implies|\frac{f(x) - f(a)}{x-a} - b| < \varepsilon$.
+		\end{defin}
+	\subsection{Right-hand Derivative}
+	\label{subsec:rhderivative}
+	\begin{defin} The \textbf{right-hand derivative} $(f^{\prime})^+(a)$ is defined, $(f^{\prime})^+ := \displaystyle\lim_{x \to a^+}{\frac{f(x) - f(a)}{x - a}}$.
+	\end{defin}
+
+	\subsection{Left-hand Derivative}
+	\label{subsec:lhderivative}
+	\begin{defin}
+		The \textbf{left-hand derivative} $(f^{\prime})^-(a)$ is defined, $(f^{\prime})^- := \displaystyle\lim_{x \to a^-}{\frac{f(x) - f(a)}{x - a}}$.
+	\end{defin}
+	\subsection{Local Maximum}
+	\label{subsec:localmaximum}
+		\begin{defin}
+			$f(a)$ is a \textbf{local maximum} of $f$ if $\exists \delta > 0 \ni x \in (a-\delta,a+\delta) \implies f(x) \geq f(a)$.
+		\end{defin}
+	\subsection{Local Minimum}
+	\label{subsec:locaminimum}
+		\begin{defin}
+			$f(a)$ is a \textbf{local minimum} of $f$ if $\exists \delta > 0 \ni x \in (a-\delta,a+\delta) \implies f(x) \geq f(a)$.
+		\end{defin}
+\section{Theorems, Lemmas, Corollaries, and Proofs}
+	\subsection{Theorem 1.1.1}
+		\begin{theor} 
+			The set of finite decimals equals the set of infinite decimals terminating in repeating nines.
+		\end{theor}
+	\subsection{Theorem 1.1.2}
+		\begin{theor}
+			An \textbf{infinite decimal} is a \emph{rational number} if and only if it is repeating.
+		\end{theor}
+
+		\begin{examp}
+			\textbf{Claim:} 0.$\overline{234} \in \Q$.\hfill\break
+			\textbf{Proof:} Let $x = 0.\overline{234}$. Then, $1000x = 234.\overline{234}$.
+			\begin{center}
+				\begin{math}
+					\begin{aligned}
+				1000x & = 234 + x\\
+				x & = \frac{234}{999}
+					\end{aligned}	
+				\end{math}
+			\end{center}
+			So, $x \in \Q$. \QED
+		\end{examp}
+
+		\begin{examp}
+			\textbf{Claim:} If $\frac{p}{q}$ is rational, then the repeating part of its
+			infinite decimal has a maximum length of $q-1$.\hfill\break
+			\textbf{Proof:} Without loss of generality, consider $\frac{1}{7} \in \Q$. We want
+			to find the infinite decimal form of $\frac{1}{7}$. Assuming long-divison works,
+			one can discover find that $\frac{1}{7} = 0.\overline{142857}$.\hfill\break
+			Note, there are seven possible elements in the set of remainders, $\Z_7$. 
+			If 0 is the remainder, then the decimal terminates. So, the maximum possible length
+			of the repeating decimal for $\frac{1}{7}$ is six. \QED
+		\end{examp}
+
+	\subsection{Lemma 1.1.4 (Archimedean property)}
+	\label{subsec:lemma114}
+		\begin{lemm}
+			If $r > 0$, $\exists n \in \mathbb{Z}^{>0} \ni r > \frac{1}{10^N}$.
+
+			``\emph{Given any number $r$, there exists a rational $\frac{1}{10^N}$ smaller than it.}''\hfill\break
+			\horline
+			\textbf{Proof:} Let $r$ be a decimal $d_0.d_1d_2\dots > 0$. Since $r \neq 0$,\hfill\break
+			$\exists n \in \N \ni d_n \neq 0$. Note, $\frac{1}{10^n} = 0.00\dots d_n$ where\hfill\break
+			$d_n = 1$. Additionally, note $r > \frac{1}{10^{n+1}}$. \QED
+
+		\end{lemm}
+	\subsection{Corollary 1.1.5}
+	\label{subsec:cor115}
+		\begin{cor}
+			If $r \geq 0$ and $r < \frac{1}{10^n}, \forall n \in \N$, then $r = 0$.
+		\end{cor}
+	\subsection{Theorem 1.1.6 (Density of the Rationals in the Reals)}
+	\label{subsec:theorem116}
+		\begin{theor}
+			$\Q$ is dense in $\R$.\hfill\break
+			\horline
+			\textbf{Proof:} Let $r>0$ and $x \in \R$ be given. Note, $x$ can be expressed as an infinite
+			decimal $x := d_0.d_1d_2\dots$. By \hyperref[subsec:lemma114]{\textbf{Lemma 1.1.4}}, $\exists n \in \Z^{>0} \ni r > \frac{1}{10^n}$.
+			Let $y,z \in \Q \ni$ $y := d_0.d_1\dots \overline{0}$ and $z := d_0.d_1\dots d_n \overline{0}$. Note,
+			if $x > 0$, $y \leq x \leq z$. If $x < 0$, $z < x < y$.\hfill\break
+			Now, suppose $x > 0$. So, $y \leq x \leq z$. Note, $z - y = \frac{1}{10^n} \Leftrightarrow z = y + \frac{1}{10^n}$.\\
+			So, the following,
+			$$ x-r < x \leq y + \frac{1}{10^n} \leq x + \frac{1}{10^n} < r + x$$
+			Note, $z = y + \frac{1}{10^n}$. So, $x - r < z < x+r$. Additionally, note $z \in \Q$.\hfill\break
+			Now, let $x < 0$. So, $z \leq x \leq y$. Note, $y = z + \frac{1}{10^n}$. The following,
+			$$x - r < x \leq z + \frac{1}{10^n} \leq x + \frac{1}{10^n} < r + x$$
+			So, $x - r < y < x + r$. Note, $y \in \Q$. Finally, let $x = 0$. $0 \in \Q$ and $0 \in (r-x,x+r), \forall r > 0$.
+			So, $\Q$ is dense in $\R$. \QED
+		\end{theor}
+	\subsection{Theorem 1.1.8 (Density of Irrationals in the Reals)}
+	\label{subsec:theorem118}
+		\begin{theor}
+			Any open interval contains an irrational number.
+		\end{theor}
+	\subsection{Theorem 1.3.12 (Local boundedness)}
+	\label{subsec:theor1312}
+		\begin{theor}
+			Let $f: D \to \R$, $D \subseteq \R$, and $a$ an accumulation point of $D$ be given. If $\displaystyle\lim_{x \to a}{f(x) = L}$
+			exists, then $\exists \delta > 0, \exists M > 0 \ni \forall x \in D, if 0 < |x - a| < \delta$. Consequently, 
+			$|f(x)| < M$.\\
+			\horline
+			\textbf{Proof:} Since $\displaystyle\lim_{x \to a}{f(x) = L}$, $\forall \varepsilon > 0$ (and in particular, $\varepsilon = 1$), $\exists \delta > 0 \ni
+			\forall x \in D, 0 < | x - a| \implies |f(x) - L| < 1$. Let $M = 1 + |L|$. Note,
+			\begin{center}
+				\begin{math}
+					\begin{aligned}
+						|f(x)| &  = |f(x) - L + L|\\
+						& \leq |f(x) - L| + |L|\\
+						& < 1+ |L|\\
+						& = M
+					\end{aligned}
+				\end{math}
+			\end{center}
+			\QED
+		\end{theor}
+	\newpage
+	\subsection{Lemma 1.4.2 (Constant multiple rule)}\footnote{Don't ask me why they structured it like this\dots}
+		\begin{lemm}
+			Let $\displaystyle\lim_{x \to x_0}{f(x) = L}$ be given. Then, $\displaystyle\lim_{x \to x_0}{(kf)(x) = kL}, \forall k \in \R$.
+		\end{lemm}
+	\subsection{Theorem 1.4.1 (Linearity)}
+		\begin{theor}
+			Let $D \subseteq \R$, $f,g: D \to \R$, $x_0, a, b, L, M \in \R$ where $x_0$ is an accumulation point of $D$. Suppose
+			$\displaystyle\lim_{x \to x_0}{f(x) = L}$ and $\displaystyle\lim_{x \to x_0}{g(x) = M}$. Then,
+			$\displaystyle\lim_{x \to x_0}{(af(x) + bg(x)) = aL + bM}$.\\
+			\horline
+			\textbf{Proof:} Let $\varepsilon > 0$ and $k \neq 0$ be given. Then, by \textbf{Lemma 1.4.2},
+			\begin{center}
+				\begin{math}
+					\begin{aligned}
+						|(kf)(x) -kL| & = |kf(x) - kL|\\
+						& = |k||f(x) - L|
+					\end{aligned}
+				\end{math}
+			\end{center}
+			Since $\displaystyle\lim_{x \to x_0}{f(x) = L}$ is given, $\forall \varepsilon > 0$, in particular $\frac{\varepsilon}{|k|}$,
+			$\exists \delta > 0 \ni \forall x \in D, 0 < |x-a| < \delta \implies |f(x) - L| < \frac{\varepsilon}{|k|}$.
+			\begin{center}
+				\begin{math}
+					\begin{aligned}
+						|k||f(x) - L| & < |k| \cdot \frac{\varepsilon}{|k|}\\
+						& < \varepsilon
+					\end{aligned}
+				\end{math}
+			\end{center}
+			\QED
+		\end{theor}
+
+	\subsection{Lemma 1.4.4 (Sum Rule)}
+		\begin{lemm}
+			Let $D \subseteq \R$, $f,g:D \to \R$, and $a,L, M \in \R$. Suppose $a$ is an accumulation point of $D$,
+			$\displaystyle\lim_{x \to a}{f(x) = L}$, and $\displaystyle\lim_{x \to a}{g(x) = M}$. Then,
+			$\displaystyle\lim_{x \to a}{(f + g)(x) = L + M}$.\\
+			\horline
+			\textbf{Proof:} Recall, the triangle inequality states $$|x + y| \leq |x| + |y|$$
+			So, $$(f+g)(x) - (L+M) \leq |f(x) - L| + |g(x) - M|$$
+			Since $\displaystyle\lim_{x \to a}{f(x) = L} \implies \exists \delta_1 > 0 \ni \forall x \in D, 0 < |x -a| <\delta_1,
+			\implies 0 < |f(x) - L| < \frac{\varepsilon}{2}$ (given that $\varepsilon > 0$). Similarly, $\displaystyle\lim_{x \to a}{g(x) = M}
+			\implies \exists \delta_2 > 0 \ni \forall x \in D, 0 < | x - a| < \delta_2 \implies 0 < | g(x) - M| < \frac{\varepsilon}{2}$. Choose
+			$\delta = \min(\delta_1,\delta_2) \ni 0 < |x - a| < \delta$, we have $|(f+g)(x) - (L+M)| \leq |f(x) - L| + |g(x) + M| < \frac{\varepsilon}{2v} +
+			\frac{\varepsilon}{2v} = \varepsilon$ \QED
+
+		\end{lemm}
+		\newpage
+	\subsection{Theorem 1.4.6 (Product Rule)}
+		\begin{theor}
+			Let $D \subseteq \R$ and $a,L,M \in \R$. Suppose $f,g:D \to \R$ and $a$ is an accumulation point of $D$. If $\displaystyle\lim_{x \to a}{f(x) = L}$ and
+			$\displaystyle\lim_{x \to a}{g(x) = L}$, then $\displaystyle\lim_{x \to a}{(f \cdot g)(x) = L \cdot M}$.\\
+			\horline
+			\textbf{Proof:} let $\varepsilon > 0$. By the triangle inequality, $$|(f \cdot g)(x) - (L \cdot M)|  = |f(x) \cdot g(x) - L \cdot g(x) 
+			+ L \cdot g(x) - L \cdot M|$$
+			Note, $|f(x) \cdot g(x) - L \cdot g(x) + L \cdot g(x) - L \cdot M| \leq |f(x) - L||g(x)| + |L||g(x) - M|$. By the \textbf{Local Boundedness Theorem},
+			$\exists k, \delta > 0 \ni |g(x)| < k$ for $0 < | x - a| < \delta$. So,
+			$$|f(x) - L||g(x)| + |L||g(x) - M| < k|f(x) + L| + |L||g(x) - M|$$
+			Since $\displaystyle\lim_{x \to a}{f(x) = L}$ and $\displaystyle\lim_{x \to a}{g(x) = M}$, $\exists \delta_2, \delta_3 > 0 \ni |f(x) - L| < 
+			\frac{\varepsilon}{2k}$ whenever $0 < |x - a| < \delta_2$ and $|g(x) - M| < \frac{\varepsilon}{2|L| + 1}$ whenever $0 < |x - a| < \delta_2$\footnote{
+			$\exists L \ni |L| = 0$}
+		\end{theor}
+		\begin{examp}
+			\textbf{Claim:} $\displaystyle\lim_{x \to a}{x^n = a^n}$.\\
+			\textbf{Proof:} Let $n \in \N, a \in \R$.\\
+			\textbf{Base Case:} When $n = 1$, $\lim_{x \to a}{x^1 = \lim_{x \to a}{x} = a}$.
+			\textbf{Inductive Hypothesis:} $\displaystyle\lim_{x \to a}{x^n} = a^n$.
+			\textbf{Inductive Step:} Suppose the \textbf{Inductive Hypothesis} holds. Then,
+			\begin{center}
+				\begin{math}
+					\begin{aligned}
+						\displaystyle\lim_{x \to a}{x^{n+1}} & = \displaystyle\lim_{x \to a}{x^n \cdot x}\\
+						& = \bigg(\displaystyle\lim_{x \to a}{x^n}\bigg)\bigg(\displaystyle\lim_{x \to a}{x}\bigg)\\
+						& = a^n \cdot a\\
+						& = a^{n+1}
+					\end{aligned}
+				\end{math}
+			\end{center}
+			\QED
+		\end{examp}
+	\newpage
+	\subsection{Theorem 1.4.9 (Quotient Rule)}
+		\begin{theor}
+			Let $D \subseteq \R$, $f,g:D \to \R$ and $a,L,M \in \R$. Let $a$ be an accumulation point of $D$. If $M \neq 0$ and $\displaystyle\lim_{x \to a}
+			{f(x) = L}$ and $\displaystyle\lim_{x \to a}{g(x) = M}$, then $\displaystyle\lim_{x \to a}{\bigg(\frac{f}{g}\bigg)(x) = \frac{L}{M}}$.\\
+			\horline
+			\textbf{Proof:} By exercise $1.3.15$\footnote{The proof of local positivity}
+			in \textbf{From Calculus to Analysis} it is shown that $\forall x \in D$ near $a$, $g(x) > \frac{|M|}{2}$.
+			Specifically, $g(x) \neq 0$ near $a$. So, $\frac{1}{g(x)} \neq 0$ near $a$. Let $\varepsilon > 0$. Observe, $|\frac{1}{g(x)} - \frac{1}{M}| = 
+			|\frac{M - g(x)}{Mg(x)}| = \frac{1}{|M||g(x)|} \cdot |M - g(x)|$. Since $|g(x)| > \frac{|M|}{2}$, $\frac{1}{g(x)} < \frac{2}{|M|}$, by a 
+			generalization of the local positivity theorem. Let $\delta > 0 \ni |M - g(x)| < \frac{M|^2 \varepsilon}{2}$, if $0 < |x - a| < \delta$.
+			Then ,$|\frac{1}{g(x)} - \frac{1}{M}| - \frac{1}{|M||g(x)|}|M - g(x)| < \frac{1}{|M|} \cdot \frac{2}{|M|} \cdot \frac{\varepsilon |M|^2}{2} =
+			\varepsilon$.
+			\QED
+		\end{theor}
+
+	\subsection{Theorem 1.4.14 (Composition Rule)}
+		\begin{theor}
+			Let $A,B,C \subseteq \R$. Suppose $f:A \to B, g: B \to C$, $a$ is an accumulation point of $A$, $b$ is an accumulation point of $B$, and $f(x) \neq b$
+			when $x \neq a$ is \emph{close} to $a$. If $\displaystyle\lim_{x \to a}{f(x) = b}$ and $\displaystyle\lim_{x \to b}{g(x) = c}$, then 
+			$\displaystyle\lim_{x \to a}{(g \circ f)(x) = c}$.\\
+			\horline
+			\textbf{Proof:} Let $\varepsilon > 0$ be given. Since $\displaystyle\lim_{y \to b}{g(y) = c}$, $\exists \delta_1 > 0 \ni 0 < |y -b| < \delta_1 \implies
+			|g(y) - c| < \varepsilon$. Similarly, since $\lim_{x \to a}{f(x) = b}, \exists \delta_2 > 0 \ni 0 < |x-a| < \delta_2 \implies |f(x) - b| < \varepsilon
+			= \delta_1$.\\
+			Now, let $\gamma > 0 \ni 0 < |x-a| < \delta \implies f(x) \neq b, \forall x$\footnote{Note, that $f(x) \neq b$ is assumed.}. Let $\delta := \min(\gamma,
+			\delta_2) \ni 0 < |x-a|<\gamma$. So, $0 < |x-a| < \gamma \implies 0 < |f(x) - b| < \delta_1 \implies |(g \circ f)(x) - c| < \varepsilon$.
+			\QED
+		\end{theor}
+		\newpage
+	\subsection{Theorem 1.4.16 (Squeeze Theorem)}
+		\begin{theor}
+			Let $f,g,h:D \to \R$ and Suppose $f(x) \leq h(x) \leq g(x), \forall x \neq a$ near $a$, some accumulation point of $D$. If $\displaystyle\lim_{x \to a}
+			{f(x) = L}$ and $\displaystyle\lim_{x \to a}{g(x) = L}$, then $\displaystyle\lim_{x \to a}{h(x) = L}$.\\
+			\horline
+			\textbf{Proof:} Let $\varepsilon>0$ be given. Let $\delta_f > 0 \ni 0 < |x-a| < \delta_f \implies |f(x) - L| < \varepsilon$. Similarly, for $\delta_g >
+			0 \ni 0 < |x-a| < \delta_g \implies | g(x) - L| < \varepsilon$. Note, $$|f(x) - L| < \varepsilon \implies -\varepsilon < f(x) - L < \varepsilon$$ and
+			$$|g(x) - L| < \varepsilon \implies -\varepsilon < g(x) - L < \varepsilon$$ So, $$-\varepsilon < f(x) - L \leq h(x) - L \leq g(x) - L < \varepsilon$$
+			when $0 < |x - a| < \delta, \delta := \min(\delta_g, \delta_f)$. Then, $$0<|x - a| < \delta \implies -\varepsilon < f(x) - L < \varepsilon \text{ and }
+			-\varepsilon < g(x) - L < \varepsilon$$ $$\implies -\varepsilon < f(x) - L \leq h(x) - L \leq g(x) - L < \varepsilon.$$ 
+			\QED
+		\end{theor}
+	\subsection{Theorem 1.4.19}
+		\begin{theor}
+			Suppose $D, D_1, D_2 \subseteq \R$, $D := D_1 \cup D_2$, $f:D \to \R$, and $a$ is an accumulation point of $D_1$ and $D_2$. The following,
+			\begin{enumerate}
+				\item[(1)] $\displaystyle\lim_{x \to a}{f(x) = L} \implies \displaystyle\lim_{x \to a}{f\Big|_{D_1}(x) = L} \text{ and } \displaystyle\lim_{x \to a}
+					{f\Big|_{D_2}(x) = L}$
+				\item[(2)] $\displaystyle\lim_{x \to a}{f\Big|_{D_1}(x) - L}$ and $\displaystyle\lim_{x \to a}{f\Big|_{D_2}(x) = L} \implies \displaystyle
+					\lim_{x \to a}{f(x) = L}$.
+			\end{enumerate}
+		\end{theor}
+		\newpage
+	\subsection{Corollary 1.4.20}
+	\label{subsec:cor1420}
+		\begin{cor} Let $D := D_1 \cup D_2, f:D \to \R$ and $a$ be an accumulation point of $D_1$ and $D_2$. If $f$ is a function,
+			then $\displaystyle\lim_{x \to a}{f(x)}$ exists $\Leftrightarrow \displaystyle\lim_{x \to a}{f\Big|_{D_1}(x)} = \displaystyle\lim_{x \to a}{f\Big|_{D_2}(x)}$ both exist.
+		\end{cor}
+		\begin{examp}
+			Let $f:\R \to \R$, $f(x) := \begin{cases} 1 & \text{if } x \in \Q\\0 & \text{if } x \not\in \Q \end{cases}$
+				Let $a \in \R$. We know that $a$ is an accumulation point of $\Q$ and $\R\setminus\Q$.\footnote{By the \hyperref[subsec:theorem116]{density of rationals} and \hyperref[subsec:theorem118]{irrationals} in the reals}
+			By this, note $\displaystyle\lim_{x \to a}{f\Big|_{\Q}(x) = 1}$ and $\displaystyle\lim_{x \to a}{f\Big|_{\R\subseteq\Q}(x) = 0}$.
+			So, $\displaystyle\lim_{x \to a}{f(x)}$ does not exist as either of its component limits\footnote{Those above.} are not equal.
+			So, this function does not converge anywhere!
+	\end{examp}
+	\subsection{Theorem (Convergence of Bounded Sequences)}
+		\begin{theor}
+			A convergent sequence is bounded\footnote{where $x$ is a sequence and $p \in \R$, convergence of a sequences is denoted $x_n \to p$}
+			\footnote{additionally, the complete proof was omitted from class. I may supply the full proof at a later date. Really trying not to
+			cop out here\dots}.
+%			\horline
+%			\textbf{proof:} suppose $x_n \to p$. so, for $\varepsilon > 0, \varepsilon :=1$, $\exists n \ni n < n \implies |x_n - p| < 1$. since, 
+%			$|x_n| = |x_n - p + p| = |x_n - p| + |p| < 1 + |p|, \forall n \in n$. 
+		\end{theor}
+	\subsection{Theorem (Threshold of Convergent Sequences)}
+		\begin{theor}
+			Suppose $x_n \to p$ and $p \neq 0$. $\exists N \in \N \ni n > N \implies |x_n| > |\frac{|p|}{2}|$.
+		\end{theor}
+	\newpage
+	\subsection{Theorem (Properties of Convergent Sequences)}
+	\label{subsec:PCS}	
+		\begin{theor}
+			Suppose sequences $a_n \to a$, $b_n \to b$, and $a,b,k \in \R$. Then,
+			\begin{enumerate}
+				\item[(1)] $ka_n \to ka$.
+				\item[(2)] $a_n + b_n \to a + b$.
+				\item[(3)] $a_nb_n \to ab$.
+				\item[(4)] If $b \neq 0$, $\frac{a_n}{b_n} \to \frac{a}{b}$.
+				\item[(5)] If $a_n \leq b_n \leq c_n, \forall n$ and $a_n, c_n \to a$, then $b_n \to a$.
+			\end{enumerate}
+		\end{theor}
+	\subsection{Theorem 2.1.1 (Continuity of Composed Functions)}
+		\begin{theor}
+			If $f$ is continuous at $a$ and $g$ is continuous at $b := f(a)$, then $g \circ f$ is continuous at $a$.\hfill\break
+			\horline
+			\textbf{Proof:} Let $\varepsilon > 0$ be given. Since $g$ is continuous at $b$, $\exists \delta_g \ni \forall y \in D, |y - b| < \delta_g
+			\implies |g(y) - g(a)| < \varepsilon$. Since $f$ is continuous at $a$, $\exists \delta_f > 0 \ni \forall x \in D, |x-a| < \delta_f \implies
+			|f(x) - f(a)| < \delta_g$. Note, $f(x) \in D$ and $b = f(a)$. So, $|f(x) - f(a)| < \delta_g \Leftrightarrow |y - b| < \delta_g$. Choose 
+			$\delta = \delta_f$. So, $|x  - a| < \delta \implies |(g \circ f)(x) - (g \circ f)(a)| < \varepsilon$.
+			\QED\hfill\break
+			\horline
+			\textbf{Comment:} If $a$ is an accumulation point in $D$, then continuity can be re-expressed as $$\displaystyle\lim_{x \to a}{f(x) = f(a)}$$
+				and given that the limit of $f$ meets the following criteria:
+				\begin{enumerate}
+					\item[(1)] Given that $a$ is indeed an accumulation point of $\R$.
+					\item[(2)] Given that both one-sided limits of $f$ exist.
+					\item[(3)] Given that both one-sided limits of $f$ are equivalent.
+				\end{enumerate}
+						
+		\end{theor}
+\addtocontents{toc}{\setcounter{tocdepth}{3}}
+
+	\newpage
+	\subsection{Theorem 3.1.5 (Order Completeness)}
+	\label{subsec:theor315}
+		\begin{theor}
+			Let $A \subseteq \R$ and $A \neq \emptyset$. If $A$ has an \hyperref[subsec:upperbound]{upper bound}, then $A$ has a \hyperref[subsec:supremum]{least 
+			upper bound}.
+		\end{theor}
+	\subsection{Theorem 3.1.8 (Greatest Lower Bound Theorem)}
+	\label{subsec:theor318}
+		\begin{theor}
+			Let $A \subseteq \R$. If $A$ has a \hyperref[subsec:infimum]{greatest lower bound}.
+		\end{theor}
+	\subsection{Theorem 3.2.1 (Interval Theorem)}
+	\label{subsec:theor321}
+		\begin{theor}
+			Let $A \subseteq \R$ and $A \neq \emptyset$. Then, $A$ has the \hyperref[subsec:intermediatevalueproperty]{intermediate value property} if and only if
+			it $A$ is an interval.\hfill \break
+			\horline
+			\textbf{Proof:} $(\Leftarrow)$ Suppose $A \subseteq \R \ni A = \emptyset$ has the intermediate value property. Let a = $\inf{A}$ and $b = \sup{A}$ such 
+			that $a$ and $b$ are both finite. Then, $a$ is a lower bound and $b$ is an upper bound. So $A \subseteq [a,b]$. Let $t \in \R \ni a < t < b$. Since 
+			$a < t$ and $a = \inf{A}$, $t$ is not a lower bound for $A$. Thus, $\exists x \in A \ni \inf{A} = a \leq x < t$. Similarly, $\exists y \in A \ni 
+			t < y \leq b = \sup{A}$. Thus, by the intermediate value property, since $x,y \in A$ and $x < t < y$, we have $t \in A$. Therefore, $(a,b) \subseteq A$.
+			\QED
+		\end{theor}
+	\newpage		
+	\subsection{Theorem 3.3.2 (Nested Interval Theorem)}
+	\label{subsec:theor332}
+		\begin{theor}
+			Suppose the closed intervals $([a_n,b_n])_{n \in \N}$ are nested and the sequence of lengths $(b_n - a_n)$ is null\footnote{That the length of the intervals
+			approaches 0}. Then, $\exists x \in \R \ni \displaystyle\cap_{n = 1}^{\infty}{[a_n,b_n]} = \{x\}$.\hfill \break
+			\horline
+			\textbf{Proof:} Suppose the closed intervals $([a_n,b_n])_{n \in \N}$ are nested and $(b_n - a_n)$ is null. Then,
+			$$a_i \leq a_{i+1} \leq \dots \leq a_j \leq b_j \leq \dots \leq b_{j+1} \leq b_j $$
+			where $i < j, \forall i,j \in \N$. So, $a_i \leq a_j \leq b_j \leq b_i \implies a_i \leq b_j, a_i \leq a_j$. Then, $\forall m,n \in \N$, $a_m \leq b_n$. 
+			Let $A:= \{a_m | m \in \N\}, B := \{b_n | n \in \N\}$. Then, $\forall a \in A$ and $\forall b \in B$, $a \leq b$.If $a:= \sup{A}$ and $b:= \inf{B}$, 
+			$a \leq b$. If $a < b$, then $0 < b - a \leq b_n - a_n, \forall n \in \N$. Note, if $\forall a_n,b_n > 0$, then $(b_n -a_n) \not\to 0$. This contradicts
+			$(b_n - a_n)$ being null. So, $a \not < b$ by contradiction. So, $a = \sup{A} = \inf{B} = b$.\hfill \break
+			Note, $\forall n \in \N, a_n \leq a$. Similarly, $b_n \geq b, \forall n \in \N$. So, $a_n \leq a = b \leq b_n$. So, $a_n \in [a_n, b_n], \forall n \in \N$. 
+			So, $\{a\} \in \displaystyle\cup_{n = 1}^{\infty}{[a_n,b_n]}$. \hfill \break
+			Now, let $x \in \displaystyle\cup_{n = 1}^{\infty}{[a_n,b_n]}$ .Then, $x \in [a_n,b_n], \forall n \in \N$. So, $a_n \leq x \leq b_n$. So, $x$ is an 
+			\hyperref{subsec:upperbound}[upper bound] for the set $A$ and a \hyperref{subsec:lowerbound}[lower bound] for the set $B$. So, $a \leq x \leq b$. But, 
+			$a = b$. So, $x = a = b$. Thus, $x \in \{a\}$. So, $\displaystyle\cup_{n = 1}^{\infty}{[a_n,b_n]} \subseteq \{a\}$. \QED
+		\end{theor}
+	\subsection{Corollary 3.3.4 (Binary Nested Interval Theorem)}
+	\label{subsec:cor334}
+		\begin{cor}
+			Let $a M b$ be real numbers. Let $a_0 := a$, $b_0 := b$. Then, $\forall n \in \N_0$, $c_n := \frac{a_n + b_n}{2}$. Now, suppose either 
+			$a_{n+1} = a_n$ and $b_{n+1} = c_n$ or $a_{n+1} - c_n$ and $b_{n+1} = b_n$. Then, $\displaystyle\cap_{n = 0}^{\infty}{[a_n,b_n] = \{x\}}, \exists x 
+			\in \R$.
+		\end{cor}
+	\subsection{Theorem 3.5.1 (Roots of an Exponential)}
+	\label{subsec:theor351}
+		\begin{theor}
+			Let $x \in \R^{>0}$, $k \in \N$. Then, $\exists y \in \R^{>0} \ni y^k = x$. So, $x^{\frac{1}{k}} = y$.
+		\end{theor}
+	\subsection{Theorem 3.5.4 (Irrationality of the Square Root of Two)}
+	\label{subsec:theor354}
+		\begin{theor}
+			Suppose $\sqrt{2}$ is rational. So, $\exists p,q \in \N \ni \sqrt{2} - \frac{p}{2}$. Suppose $p$ and $q$ have no common factors. Then, 2 = $\frac{p^2}{q^2} \implies 2q^2 = p^2$.
+			So, $p^2$ and furthermore, $p$ is even. Since $p$ is even, $p = 2k, \exists k \in \N$. So, $2q^2 = (2k)^2 = 4k^2$. So, $q^2 = 2k^2$ and $q$ is even.
+			So, $p$ and $q$ have a common factor, 2. But $p$ and $q$ have no common factors! So, by contradiction, $\sqrt{2}$ is irrational.\QED
+		\end{theor}			
+		\subsection{Lemma (Finite Union of Countable Sets)}
+		\label{subsec:finiteunionofcountablesets}
+			\begin{lemm}
+				The union of two countable sets is a countable set.\hfill\break
+				\horline
+				\textbf{Proof:} Let $A$ and $B$ be countable. Let $a_1,a_2,a_3,\dots \in A$be an enumeration of $A$ and $b_1,b_2,b_3,\dots \in B$ be
+				an enumeration of $B$. Note, $a_1,b_1,a_2,b_2,a_3,b_3,\dots$ is an enumeration in $A \cup B$. So, $A \cup B$ a finite union of countable sets. \QED
+			\end{lemm}
+	\subsection{Lemma (Infinite Union of Finite Sets)}			
+	\label{subsec:infiniteunionoffinitesets}
+		\begin{lemm}
+			If $A_k, \forall k \in \N$ is finite, then $\displaystyle\cup_{k=1}^{\infty}{A_k}$ is countable.
+		\end{lemm}
+
+	\subsection{Theorem 4.1.5 (Infinite Union of Countable Sets)}
+	\label{subsec:theor415}
+		\begin{theor}
+			Let $A_k := \{a_{k,1}, a_{k,2}, a_{k,3},\dots \}$ and let $B_n := \{a_{ij} | i+j = n\}$. Since, $B_n$ has $n-1$ elements, it is finite and countable.
+			Consequently, $\displaystyle\cup_{k=1}^{\infty}{A_k}$ is countable. \QED
+		\end{theor}
+	\newpage
+	\subsection{Theorem 4.1.7 (Cantor)}
+	\label{subsec:theor417}
+		\begin{theor}
+			The interval $[0,1]$ is not countable.\footnote{Really sorry about lack of order in the theorem counting here\dots I need to create a template for propositions, which is what this statement really is}\hfill\break
+			\horline
+			\textbf{Proof:} Suppose $[0,1]$ is countable. Let $\{y_k | k \in \N\} := [0,1]$\footnote{Very weird notation\dots} Suppose $x := 0.d_1d_2\dots$ where
+			$$d_k := \begin{cases} 7 ,& k^{\text{th}} \text{ digit of } y_k \leq 4\\ 2 ,& k^{\text{th}} \text{ digit of } y_k \geq 5 \end{cases}$$
+				For any $k$, $x_k \neq y_k$ since they have different $k^{\text{th}}$ digits. \QED
+		\end{theor}
+	\subsection{Theorem 4.2.1}
+	\label{subsec:theor421}
+		\begin{theor}
+			Let $A$ and $B$ be sets. There is an injective map $f:A \to B$ if and only if there is a surjective map $g: B \to A$. 
+		\end{theor}
+	\subsection{Theorem (Cantor-Bernstein-Schr{\"o}der Theorem)}
+	\label{subsec:CBST}
+		\begin{theor}
+			If $|A| \geq |B|$ and $|A| \leq |B|$, then $|A| = |B|$.
+		\end{theor}
+		\begin{examp}
+			\textbf{Claim:} The Cantor Set is uncountable.
+			\textbf{Proof:} Let the Cantor function $f: C \to [0,1]$, $f(d_0.d_1\dots) := \displaystyle\sum_{k = 0}^n{\frac{d_k}{n}}$.\hfill\break
+			\textbf{Claim:} $f$ is not injective. Let $x \in [0,1]$ be expressed $x:= 0._2d_1d_2\dots$. Since $d_j \in \{0,2\}, \forall j, y \in C$ and $f(y) = x$.
+			So, $f:C \to [0,1]$ is a surjection. By \hyperref[subsec:theor421]{Theorem 4.2.1}, there is an injection  $g:[0,1] \to C$.\hfill\break
+			Note, $h: C \to [0,1], h(c) = c, \forall c \in C$ is a satisfactory injection as $C \subseteq [0,1]$. So, by \hyperref[subsec:CBST]{Cantor-Bernstein-Schr{\"o}der Theorem}
+			$|C| = |[0,1]|$ and thus $f$ is a bijection. So, $C$ is uncountable. \QED
+		\end{examp}
+
+	\subsection{Theorem (Jump Discontinuity Theorem)}
+	\label{subsec:JDT}
+		\begin{theor}
+			Let $I$ be an interval and suppose $ff: I \to \R$ is \hyperref[subsec:monotone]{monotone}. Let $a \in I$. Then, $f$ is discontinuous at $a$ if and only
+			if $f$ has a \hyperref[subsec:jumpdiscontinuity]{jump discontinuity} at $a$.
+		\end{theor}
+
+	\subsection{Corollary 5.1.4}
+	\label{subsec:cor514}
+		\begin{cor}
+			A monotone function has a countable or empty set of discontinuities.\hfill\break
+			\horline
+			\textbf{Proof:} Without loss of generality, consider $f$ to be increasing. Let $A$ be the set of discontinuities of $f$. If $a \in A$, then $\displaystyle\lim_{x \to a^{-}}{f(x) < \displaystyle\lim_{x \to a^+}{f(x)}}$ since $f$ is increasing and discontinuous at $a$. Consider the open interval,
+			$$I_0 := (\displaystyle\lim_{x \to a^-}{f(x)},\displaystyle\lim_{x \to a^+}{f(x)})$$. If $\exists a^{\prime} \in A \ni a^{\prime} < a$, then
+			$$\displaystyle\lim_{x \to a^-}{f(x)} \leq f(\frac{a+a^{\prime}}{2}) \leq \displaystyle\lim_{x \to a^-}{f(x)}$$\QED
+		\end{cor}
+
+	\subsection{Theorem 5.1.6 (Continuity Theorem for Monotone Functions)}
+	\label{subsec:theor516}
+		\begin{theor}
+			A \hyperref[subsec:monotone]{monotone function} defined on an interval is continuous if and only if its range is an interval.
+		\end{theor}
+
+	\newpage		
+	\subsection{Corollary 5.1.8}
+	\label{subsec:cor518}
+		\begin{cor}
+			A monotone function defined on an interval is continuous if and only if its range has the \hyperref[subsec:intermediatevalueproperty]{intermediate value property}.
+		\end{cor}
+
+	\subsection{Corollary 5.1.9}
+	\label{subsec:cor519}
+		\begin{cor}
+			The inverse of a strictly increasing function is strictly increasing.
+		\end{cor}
+
+	\subsection{Corollary 5.1.10}
+	\label{subsec:cor5110}
+		\begin{cor}
+			The inverse of a strictly monotone, continuous function defined on an interval is continuous.\hfill\break
+			\horline
+			\textbf{Proof:} Let $I$ be an interval and suppose $f:I \to \R$ is strictly increasing (without loss of generality) and continuous. 
+			By \hyperref[subsec:cor519]{Corollary 5.1.9}, $f^{-1}$ is strictly increasing. By \hyperref[subsec:theor516]{Theorem 5.1.6}, range ${f}$ is
+			an interval, $J$. So, $f^{-1}:J \to I$. Therefore, $f^{-1}$ is continuous.\QED
+		\end{cor}
+	\newpage
+
+	\subsection{Theorem 5.2.1 (Bolzano's Intermediate Value Theorem)}
+	\label{subsec:theor521}
+		\begin{theor}
+			Let $I$ be an interval and $f: I \to \R$ be a continuous function. If there are points $a,b \in I \ni f(a) < 0$ and $f(b) > 0$, then there is a point
+			$c \in (a,b) \ni f(c) = 0$. \hfill\break
+			\horline
+			\textbf{Proof:} Without loss of generality, $a < b$. Let $a_0 := a$ and $b_0 := b$. Then, $f(a_0) < 0$ and $f(b_0) > 0$. Let $c_0 := \frac{a_0+b_0}{2}$.
+			If $f(c_0) = 0 \implies c = c_0$, then there exists an element in between $a$ and $b$ that equals $0$. If $f(c_0) < 0$, let $a_1 := c_0$ and 
+			$b_1 := b_0$. If $f(c_0) > 0$, let $a_1 := a_0$ and $b_1 := c_0$. In either case, $f(a_1) < 0$ and $f(b_1) > 0$. So, sequences $(a_n)$ and
+			$(b_n)$ with $f(a_n) < 0$ and $f(b_n) > 0, \forall n \in \N_0$. For $c_n := \frac{a_n + b_n}{2}, a_{n+1} := a_n$ and $b_{n+1} := c_n$ or
+			$a_{n+1} := c_n$ and $b_{n+1} := b_n$. Thus, $([a_n,b_n])$ are nested and $\displaystyle\cup_{n = 0}^{\infty}{[a_n,b_n]} = \{c\}, \exists c \in \R$.
+			Since $f(a_n) < 0, \forall n \in \N, f(c) = \displaystyle\lim_{n \to \infty}{a_n \leq 0}$. Similarly, $f(b_n) < 0 \implies f(c) = \displaystyle\lim_{n \to \infty}{b_n \geq 0 }, \forall n \in \N$. Therefore, $f(c) = 0$. \QED
+
+		\end{theor}
+
+	\subsection{Theorem 5.2.2 (Intermediate Value Theorem)}
+	\label{subsec:theor522}
+		\begin{theor}
+			If a real-valued function $f$ is continuous on some interval $I$, then the image $f(I)$ has the \hyperref[subsec:intermediatevalueproperty]{intermediate value property}.\hfill\break
+			\horline
+			\textbf{Proof:} Let $a,b \in I \ni a<b$ and $y_0$ be in between $f(a)$ and $f(b)$. If $f(a) < f(b)$, apply the intermediate value theorem to $g(x) := f(x) - y_0$. 
+			If $f(b) < f(a)$, apply the intermediate value theorem to $g(x) := y_0 - f(x)$. \QED
+		\end{theor}
+	\newpage		
+
+	\subsection{Corollary 5.2.3}
+	\label{subsec:cor523}
+		\begin{cor}
+			If a real-valued function $f$ is continuous on some interval $I$ ,then $f(I)$ is an interval.
+		\end{cor}
+
+	\subsection{Theorem 5.5.3 (Global Boundedness Theorem)}
+	\label{subsec:GBT}
+		\begin{theor}
+			Let $I$ be a compact interval. If $f: I \to \R$ is continuous, then $f$ is bounded on $I$.\hfill\break
+			\horline
+			\textbf{Proof:} By the \hyperref{theor522}[intemediate value theorem], $f(I)$ is an interval. Suppose $f$ is unbounded on $I$. Then, $\exists x \in E, 
+			\forall M \in \R \ni  |f(x)| \geq M$.\hfill\break
+			Bisect $I$. Since $f$ is unbounded on $I$, it is unbounded on at least one of the halves of $I$. Bisect the unbounded half of $I$. Repeat this argument
+			to obtain a sequence of nested intervals $I_{n+1} \subseteq I_n, \forall n \in \N \ni f$ is unbounded on each $I_n$. By the \hyperref[subsec:theor332]{nested interval theorem}
+			, $\displaystyle\cap_{n = 0}^{\infty}{I_n} = \{x_0\}$ for $\exists x_9 \in \R$. Note, $f$ is continuous on $I$ and specifically at $x_0$. So, by 
+			\hyperref[subsec:theor1312]{local boundedness}, $\exists \delta > 0 \ni f$ is bounded on $(x_0 - \delta, x_0 + \delta)$. By \textbf{Example 3.3.3} in
+			\textbf{From Calculus to Analysis}, $\exists n \in \N \ni I_n \subseteq (x_0 - \delta, \delta + x_0)$. So, $I_n$ is bounded by contradiction.
+		\end{theor}
+	\newpage	
+
+	\subsection{Theorem 5.3.5 (Extreme Value Theorem)}
+	\label{subsec:theor535}
+		\begin{theor}
+			Let $I$ be a compact interval. If $f: I \to \R$ is continuous on $I$, then there are $x_{\text{min}}$ and $x_{\text{max}}$\footnote{Otherwise denoted
+			as $\argmin{I}$ and $\argmax{I}$ respectively.} such that $f(x_{\text{min}}(x) \leq f(x) \leq f(x_{\text{max}}(x), \forall x \in I$.\hfill\break
+			\horline
+			\textbf{Proof:} Let $M := \sup{f(I)}$. Since $f$is bounded, by the global boundedness theorem, $m \in \R$. Now, bisect $I$. We know that at least
+			one-half of $I$ gives $\sup{f(I)} = M$. Choose this half. Repeat this argument to obtain a sequence of nested intervals. $I_n \ni \sup{f(I_n} - M$. So,
+			by the \hyperref[subsec:theor332]{nested interval theorem}, $\displaystyle\cup_{n = 0}^{\infty}{I_n - \{x_0\}}$ for $\exists x_0 \in \R$. Since
+			$M =  \sup{f(I)}$, $f(x) \leq M, \forall x \in I$. So, $f(x_0) \leq M$. Suppose $f(x_0) < M$. Let $\varepsilon := \frac{1}{2}\bigg(M - f(x_0)\bigg) > 0$.
+			Since $f$ is continuous, $\exists \delta > 0 \ni \forall x \in I, |x - x_0| < \delta \implies |f(x) - f(x_0)| < \varepsilon = \frac{1}{2}\bigg(M - f(x_0)\bigg)$. Viz., $\exists x \in (x_0 - \delta, x_0 + \delta) \ni f(x) < f(x_0) + \varepsilon$. So, $f(x) < \frac{1}{2}M + \frac{1}{2}f(x_0) < \frac{1}{2}M + \frac{1}{2}M = M$. 
+			Choose $N \ni I_n \subseteq (x_0 - \delta, x_0 + \delta)$. Then, $M = \sup{\{f(x) | x \in I_n\}} \leq \sup{\{f(x) | x \in (x_0 - \delta, x_0 + \delta)\}}
+			< f(x_0) + \varepsilon = M$ by contradiction. The argument for $x_{\text{min}}$ follows similarly. \QED
+		\end{theor}
+	\subsection{Corollary 5.3.6}
+
+	\label{subsec:cor536}
+		\begin{cor}
+			If $f:[a,b] \to \R$ is continuous and $x_{\min}, x_{\max} \in [a,b] \ni f(x_{\min}) \leq f(x) \leq f(x_{\max}), \forall x \in [a,b]$ then
+			$f([a,b]) = [f(x_{\min}),f(x_{\max})$.
+		\end{cor}
+	\newpage		
+	\subsection{Lemma 5.4.5}
+
+	\label{subsec:lemm545}
+		\begin{lemm}
+			Let $f:[0,1] \to \R$. Suppose $f$ is \hyperref[subsec:uniformcontinuity]{uniformly continuous} on $I_1 : = [0,\frac{1}{2}], I_2 := [\frac{1}{2},1]$,
+			and $I_3 = [\frac{1}{4},\frac{3}{4}]$. Then, $f$ is uniformly continuous on $[0,1]$.\hfill\break
+			\horline
+			\textbf{Proof:} Let $\varepsilon > 0$ be given. For each $j$, let $\exists \delta_j > 0$ such that uniform continuity is satisfied for $\varepsilon$ on $I_j$.
+			Let $\delta := \min{\delta_1,\delta_2,\delta_3,\frac{1}{2}}$. Then, if $x,y \in [0,1]$ with $|x - y| < \delta \leq \frac{1}{2}$. So, $x,y \in I, 
+			\exists!j$. Thus, $|x - y| < \delta \leq \delta_j \implies |f(x) - f(y)| < \varepsilon$. \QED
+
+		\end{lemm}
+
+		\subsection{Theorem 5.4.6 (Uniform Continuity Theorem)}
+		\label{subsec:theor546}
+			\begin{theor}
+				Let $f:[a,b] \to \R$ be continuous on $[a,b]$. Then, $f$ is uniformly continuous on $[a,b]$.\footnote{If $f$ is continuous on a compact interval, it is uniformly continuous}\hfill\break
+				\horline
+				\textbf{Proof:} Let $f:[a.b] \to \R$ be continuous on $[a,b]$. Suppose $f$ is not uniformly continuous on $[a,b]$. Then, 
+				$\exists \varepsilon > 0, \forall \delta > 0, \exists x,y \in [a,b] \ni |x-y| < \delta$ and $|f(x) - f(y)| \geq \varepsilon$. 
+				Let $\varepsilon_0 > 0$ be such that there is no $\delta > 0$ satisfying uniform continuity on $[a,b]$. By \hyperref[subsec:lemm545]{Lemma 5.4.5}, there is no $\delta > 0$ satisfying uniform continuity for $\varepsilon_0$ on at least one of the three subintervals ,$[a,\frac{a+b}{2}], [\frac{a+b}{2}, b],
+				[\frac{3a+b}{4}, \frac{a+3b}{4}]$. Let $a_1 := a$ and $b_1:=b$. Repeat the argument so $\forall n \in \N$, $[a_n{n+1}, b_{n+1}] \subseteq
+				[a_n,b_n]$ and $b_{n+1} - a_{n+1} = \frac{|b_n - a_n|}{2}$ and there is no $\delta$ satisfying uniform continuity for $\varepsilon_0$
+				on $[a_n,b_n]$. Note, $[a_n,b_n]$ is nested $\forall n \in \N$. Additionally, $b_n - a_n = \frac{(b - a)}{2^{n-1}}$ is null. By the
+				\hyperref[subsec:theor332]{Nested Interval Theorem}, $\exists x_0 \in \R \ni \{x_0\} = \cap_{n = 1}^{\infty}{[a_n,b_n]}$. So, $f$ is 
+				continuous at $x_0$. Thus, $\exists \delta_0 > 0, \forall x \in [a,b], |x-x_0| < \delta_0 \implies |f(x) - f(x_0)| < \frac{\varepsilon_0}{2}$.
+				Let $N$ be such that $[a_N,b_N] \in (x_0-\delta_0,x_0+\delta_0)$. So, $\forall x,y \in [a_N,b_N], |x - x_0| < \delta_0$ and 
+				$|y-x_0| < \delta_0$. Thus, $|f(x) - f(x_0)| < \frac{\varepsilon}{2}$ and $|f(y) - f(x_0)| < \frac{\varepsilon}{2}$. So, 
+				$|f(x) - f(y)| \leq |f(x_0) - f(y)| + |f(x) + f(x_0)| < \frac{\varepsilon_0}{2} + \frac{\varepsilon_0}{2} = \varepsilon_0$.
+
+				So, $x,y \in [a_N,b_N]$ satisfy uniform continuity for $\varepsilon_0$.\footnote{This argument shows that any $\delta>0$ satisfies uniform
+				continuity for $\varepsilon$ on $[a_N, b_N]$. But, there is supposedly no $\delta_0$ that satisfies uniform continuity for $\varepsilon_0$
+				on $[a_N, b_N]$} So. $f$ is uniformly continuous on $[a,b]$.\QED 
+			\end{theor}
+
+
+\newpage
+\section{Version History}
+	\subsection{v0.0.0 (4/2/2020)}
+		Initial release of \emph{The Compendium}.
+		
+\end{document}
