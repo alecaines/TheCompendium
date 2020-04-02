@@ -43,6 +43,6 @@ note of:
 2. The line numbers at which the changes took place if possible
 3. A brief description (need not to be elaborate at all) of the changes.  
 
-Given that I beleive the changes are appropriate, I will then alter the version of *The Compendium* and its state. I will then release the newest version on *Overleaf*,  
+Given that I believe the changes are appropriate, I will then alter the version of *The Compendium* and its state. I will then release the newest version on *Overleaf*,  
  and GitHub, for all to access. All version changes will be recorded after the section titled **Theorems, Lemmas, Corollaries, and Proofs*. Though, do note, no one is stopping you from hosting your own version! Request collaboration from me, and I will create a new branch for you to work on. Or, if you wish to work on *Overleaf*, reset the version of
 your own document to 0.0.0, list me as a co-author and yourself as the author, and then tex away!
