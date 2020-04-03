@@ -87,4 +87,4 @@
 \contentsline {subsection}{\numberline {0.2.46}Lemma 5.4.5}{38}{subsection.0.2.46}%
 \contentsline {subsection}{\numberline {0.2.47}Theorem 5.4.6 (Uniform Continuity Theorem)}{38}{subsection.0.2.47}%
 \contentsline {section}{\numberline {0.3}Version History}{39}{section.0.3}%
-\contentsline {subsection}{\numberline {0.3.1}v0.0.0 (4/2/2020)}{39}{subsection.0.3.1}%
+\contentsline {subsection}{\numberline {0.3.1}\href {https://www.overleaf.com/read/gyqrjdfnjyvb}{v0.0.0 (4/2/2020)}}{39}{subsection.0.3.1}%
