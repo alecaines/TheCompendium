@@ -5,6 +5,7 @@
 %\geometry{landscape}                % Activate for for rotated page geometry
 %\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}
+\usepackage{bbm}
 \usepackage{color, soul}
 \usepackage{indentfirst}
 \usepackage{hyperref}
@@ -241,7 +242,7 @@ firstextra={
 
 \title{{\bf \href{https://www.overleaf.com/read/gyqrjdfnjyvb}{The Compendium}}}
 \author{Alexander Caines}
-\date{0.0.0}
+\date{0.0.3}
 \begin{document}
 \maketitle
 
@@ -606,6 +607,80 @@ email, make note of
 		\begin{defin}
 			$f(a)$ is a \textbf{local minimum} of $f$ if $\exists \delta > 0 \ni x \in (a-\delta,a+\delta) \implies f(x) \geq f(a)$.
 		\end{defin}
+	\subsection{Partition}
+	\label{subsec:partition}
+		\begin{defin}
+			A \textbf{partition} of a closed and bounded\footnote{Compact, in other words\dots} interval $[a,b]$ is a finite collection of points,
+			$$a = x_0 < x_1 < \dots < x_n = b$$
+		\end{defin}
+
+	\subsection{Step Function}
+	\label{subsec:stepfunction}
+		\begin{defin}
+			Given a partition $a = x_0 < \dots < x_n = b$, of $[a,b]$, a \textbf{step function} is a function,
+			$$s:[a,b] \to \R, s(x) := \sum_{k = 1}^n{A_k \mathbbm{1}_(x_{k-1},x_k)(x)}$$
+			that is constant on $(x_{k-1},x_k)$.
+		\end{defin}
+
+	\subsection{Lower Step Function}
+	\label{subsec:lowerstepfunction}
+		\begin{defin}
+			A step function $s:[a,b] \to \R$ is a \textbf{lower step function} for $f$ if 
+			$$s(x) \leq f(x), \forall x \in [a,b]$$
+			except possibly at partition points.
+		\end{defin}
+
+	\subsection{Upper Step Function}
+	\label{subsec:upperstepfunction}
+		\begin{defin}
+			An step function $s:[a,b] \to \R$ is an \textbf{upper step function} if 
+			$$f(x) \leq s(x), \forall x \in [a,b]$$
+			except possibly at partition points.
+		\end{defin}
+	
+	\subsection{Lower Integral}
+	\label{subsec:lowerintegral}
+		\begin{defin}
+			The \textbf{lower integral} of $f$ $\underline{\int_a^b }f$ is the \hyperref[subsec:supremum]{supremum}  of the set of lower sums for $a$.
+			$$\underline{\int_a^b}f := \text{sup}\{\sum s | s \text{ is a lower step function of } f \}$$
+		\end{defin}
+
+	\subsection{Upper Integral}
+	\label{subsec:upperintegral}
+		\begin{defin}
+			The \textbf{upper integral} of $f$ $\overline{\int_a^b }f$ is the \hyperref[subsec:infimum]{infimum}  of the set of upper sums for $a$.
+			$$\overline{\int_a^b}f := \text{sup}\{\sum s | s \text{ is an upper step function of } f \}$$
+		\end{defin}
+
+		\begin{examp}
+			\textbf{Claim:} The set of upper sums is nonempty and bounded below. 
+			\textbf{Proof:} Let $S(x) = M$. Then, $s(x) \geq f(x), \forall x \in [a,b], \forall x \in [a,b]$. So, $S(x)$ is an upper step function and $\sum S$ is an upper sum. So, 
+			the set of upper sums is not nonempty.
+
+			Now, let $S = \sum_{k=1}^n{A_k \mathbbm{1}_{(x_{k-1}, x_k)}}$ be an upper set function. Then $A_k \geq f(x)$. Note, $f(x) \geq M$. So, $A_k \geq M$. Thus, 
+			$$\sum S = \sum_{i = 1}^M{A_i(x_i - x_{i-1})} \geq \sum_{i = 1}^N{M(x_i - x_{i-1})} = M(b-a)$$
+			\QED
+		\end{examp}
+
+	\subsection{Riemann Integrable}
+	\label{subsec:riemannintegrable}
+		\begin{defin}
+			A bounded function $f:[a.b] \to \R$ is \textbf{(Riemann) integrable} if $\underline{\int_a^b}{f} = \underline{\int_a^b}{f}$
+		\end{defin}
+		\begin{examp}
+			Let $s$ be a lower step function for $g$. Then, $s(x) \leq f(x) \leq g(x), \forall x$. Therefore, 
+			$$\sup\{\sum s | s \text{ is a lower step function for } g \} \leq \sup\{\sum S | S \text{ is a lower step function for } g \}$$
+			So, $\underline{\int_a^b}{f} \leq \underline{\int_a^b}{g}$. Since $f$ and $g$ are integrable, $\int_a^b = \underline{\int_a^b}{f} = \underline{\int_a^b}{g}$.
+			\QED
+		\end{examp}
+
+	\subsection{Refinement}
+	\label{subsec:refinement}
+		\begin{defin}
+			A partition $Q: a = y_0 < y_1 < \dots < y_n = b$ is a \textbf{refinement} of a partition $P: a = x_0 < \dots < x_m = b$ if 
+			$$\{x_j | j = 0,\dots,m \} \subset \{y_k | k = 0,\dots,n\}$$
+		\end{defin}
+
 \section{Theorems, Lemmas, Corollaries, and Proofs}
 	\subsection{Theorem 1.1.1}
 		\begin{theor} 
@@ -935,7 +1010,7 @@ email, make note of
 			Note, $\forall n \in \N, a_n \leq a$. Similarly, $b_n \geq b, \forall n \in \N$. So, $a_n \leq a = b \leq b_n$. So, $a_n \in [a_n, b_n], \forall n \in \N$. 
 			So, $\{a\} \in \displaystyle\cup_{n = 1}^{\infty}{[a_n,b_n]}$. \hfill \break
 			Now, let $x \in \displaystyle\cup_{n = 1}^{\infty}{[a_n,b_n]}$ .Then, $x \in [a_n,b_n], \forall n \in \N$. So, $a_n \leq x \leq b_n$. So, $x$ is an 
-			\hyperref{subsec:upperbound}[upper bound] for the set $A$ and a \hyperref{subsec:lowerbound}[lower bound] for the set $B$. So, $a \leq x \leq b$. But, 
+			\hyperref[subsec:upperbound]{upper bound} for the set $A$ and a \hyperref[subsec:lowerbound]{lower bound} for the set $B$. So, $a \leq x \leq b$. But, 
 			$a = b$. So, $x = a = b$. Thus, $x \in \{a\}$. So, $\displaystyle\cup_{n = 1}^{\infty}{[a_n,b_n]} \subseteq \{a\}$. \QED
 		\end{theor}
 	\subsection{Corollary 3.3.4 (Binary Nested Interval Theorem)}
@@ -995,7 +1070,7 @@ email, make note of
 	\subsection{Theorem (Cantor-Bernstein-Schr{\"o}der Theorem)}
 	\label{subsec:CBST}
 		\begin{theor}
-			If $|A| \geq |B|$ and $|A| \leq |B|$, then $|A| = |B|$.
+			If $|A| \geq |B|$ and $|A| \leq |B|$, then $|A| = |B|$.\footnote{If you are interested in Homotopy Type Theory, do note that \href{https://homotopytypetheory.org/2020/01/26/the-cantor-schroder-bernstein-theorem-for-\%e2\%88\%9e-groupoids/}{there exists an analog!}}
 		\end{theor}
 		\begin{examp}
 			\textbf{Claim:} The Cantor Set is uncountable.
@@ -1089,7 +1164,7 @@ email, make note of
 		\begin{theor}
 			Let $I$ be a compact interval. If $f: I \to \R$ is continuous, then $f$ is bounded on $I$.\hfill\break
 			\horline
-			\textbf{Proof:} By the \hyperref{theor522}[intemediate value theorem], $f(I)$ is an interval. Suppose $f$ is unbounded on $I$. Then, $\exists x \in E, 
+			\textbf{Proof:} By the \hyperref[subsec:theor522]{intemediate value theorem}, $f(I)$ is an interval. Suppose $f$ is unbounded on $I$. Then, $\exists x \in E, 
 			\forall M \in \R \ni  |f(x)| \geq M$.\hfill\break
 			Bisect $I$. Since $f$ is unbounded on $I$, it is unbounded on at least one of the halves of $I$. Bisect the unbounded half of $I$. Repeat this argument
 			to obtain a sequence of nested intervals $I_{n+1} \subseteq I_n, \forall n \in \N \ni f$ is unbounded on each $I_n$. By the \hyperref[subsec:theor332]{nested interval theorem}
@@ -1156,10 +1231,78 @@ email, make note of
 				on $[a_N, b_N]$} So. $f$ is uniformly continuous on $[a,b]$.\QED 
 			\end{theor}
 
+		\subsection{Theorem (Product Rule)}
+		\label{subsec:productrule}
+			\begin{theor}
+				Suppose $a$ is an accumulation point of $D$ and $f,g: D \to \R$ are differentiable at $a$. Then, 
+				$$(fg)^{\prime}(a) = f^{\prime}(a)g(a) + f(a)g^{\prime}(a)$$
+			\end{theor}
 
+		\subsection{Theorem (Chain Rule)}
+		\label{subsec:chainrule}
+			\begin{theor}
+				Suppose $g: A \to B$ is differentiable at $a$ and $f:B \to C$ is differentiable at $g(a)$. Then, $(f \circ g)$ is differentiable at $a$ and 
+				$$(f \circ g)^{\prime})a_ = f^{\prime}(g(a))g^{\prime}(a)$$
+			\end{theor}
+
+		\subsection{Theorem (Quotient Rule)}
+		\label{subsec:quotientrule}
+			\begin{theor}
+				Suppose $a \in D$ is an accumulation point and $f,g:D \to \R$ are differentiable at $a$ with $g(a) \neq 0$. Then, $\frac{f}{g}$ is 
+				differentiable at $a$ and $$\big(\frac{f}{g}\big) = \frac{f^{\prime}(a)g(a) - f(a)g^{\prime}(a)}{(g(a))^2}$$
+			\end{theor}
+
+		\subsection{Lemma 7.1.1}
+		\label{subsec:lemm711}
+			\begin{lemm}
+				Let $f:[a,b] \to \R$ be a bounded function. The set of lower sums for $f$ is non-empty and bounded from above.
+			\end{lemm}
+
+		\subsection{Lemma 7.1.8}
+		\label{subsec:lemm718}
+			\begin{lemm}
+				Let $g$ be a step function. If $g^{\prime}$ is obtained from $g$ by inserting a finite number of additional partition points, then
+				$$\sum g^{\prime} = \sum g$$
+				\horline
+				\textbf{Proof:} Let $g:= \sum_{k = 1}^n{A_k \mathbbm{1}_{(x_{k-1}, x_k)}}$ be a step function. Let $t \in [a,b] \ni t \neq x_i, \forall i$.\footnote{We are picking 
+				a new partition point} For $k < j$, let $y_k := x_k$ and a new set partition $B_k := A_k$. If $k = j$, then let $y_j = t$ and $B_j := A_j$. Finally, for 
+				$k > j$, let $y_k = x_{k-1}$ and $B_k := A_{k-1}$. Now, define $g_1 := \sum_{k=1}^{n+1}B_k \mathbbm{1}_{(y_{k-1}, y_k)}$. Then, if $x \in (x_{i-1}, x_i)$ for $i \neq j$, 
+				$g_1(x) := A_i$. If $x \in (x_{j - i}, t)$ or $(t, x_j)$, then $g_1(x) = A_i$. So, 
+				$$\sum_{P}{g_1} = \sum_{i = 1}^{n+1}{B_i(y_i - y{i-1})} =  \sum_{i = 1}^{n+1}{A_i(x_i - x{i-1})}$$
+				\QED
+			\end{lemm}
+
+		\subsection{Corollary 7.1.9}
+		\label{subsec:cor719}
+			\begin{cor}
+				If $s,t$ are step functions with respect to partitions $P,Q$ of $[a,b]$, then $s,t$ are step functions with respect to the \emph{common partition} $R := P \cup Q$. 
+				Also, $\sum_R s = \sum_P s$ and $\sum_R t = \sum_Q t$.
+			\end{cor}
+
+		\subsection{Lemma 7.1.11}
+		\label{subsec:lemm7111}
+			\begin{lemm}
+				Let $f$ be a bounded function. If $s$ is a lower step function for $f$ and $S$ is an upper step function for $f$, then $\sum s \leq \sum S$.\hfill\break
+				\horline
+				\textbf{Proof:} Suppose $s$ corresponds to $P: y_0 < \dots < y_{\ell}$ and $S$ corresponds to $Q: z_0 < \dots < z_m$. Let $\{x_0, \dots , x_n\} = \{y_0,\dots,y_{\ell}\}
+				\cup \{z_0, \dots , z_m\}$. So, $R: x_0 < \dots < x_n$ is a refinement of both $P$ and $A$. By Corollary 7.1.9, $\sum_P s = \sum_R s$ and $\sum_Q S = \sum_R S$.
+				Suppose $s(x) := a_i$ and $S(x) := A_i, x_{i-1} < x < x_i$. Since $s$ is a lower step function, $a_i = s(x) \leq f(x)$. Since $S$ is an upper step function,
+				$f(x) = A_i$. So, $a_i \leq A_i, \forall i$\footnote{Consult Swindle. There are multiple errors in the previous edits of version 0.0.3}. Thus, 
+				$\sum_R s = \sum_{i=1}^n{a_i(x_i - x_{i-1})} \leq \sum_{i=1}{A_i(x_i - x_{i-1})} = \sum_R S$.
+				\QED
+			\end{lemm}
 \newpage
 \section{Version History}
 	\subsection{\href{https://www.overleaf.com/read/gyqrjdfnjyvb}{v0.0.0 (4/2/2020)}}
 		Initial release of \emph{The Compendium}. 		
-		
+	\subsection{v0.0.1 (4/2/2020)}
+		Added \hyperref[subsec:productrule]{Product Rule}, \hyperref[subsec:chainrule]{Chain Rule}, and \hyperref[subsec:quotientrule]{Quotient Rule} to Theorems.
+	\subsection{v0.0.2 (4/7/2020)}
+		Added footnote about \hyperref[subsec:CBST]{The Cantor-Schr{\"o}der-Bernstein Theorem} for $\infty$-groupoids in Homotopy Type Theory.
+	\subsection{v0.0.3 (4/14/2020)}
+		Added \hyperref[subsec:lemm711]{Lemma 7.1.1}, \hyperref[subsec:lemm718]{Lemma 7.1.8}, \hyperref[subsec:cor719]{Corollary 7.1.9}, and \hyperref[subsec:lemm7111]{Lemma 7.1.11}.
+		Additionally, the definitions for \hyperref[subsec:partition]{partitions}, \hyperref[subsec:refinement]{refinements}, \hyperref[subsec:lowerstepfunction]{lower}, 
+		\hyperref[subsec:upperstepfunction]{upper}, and \hyperref[subsec:stepfuction]{general} step functions as well as \hyperref[subsec:lowerintegral]{lower} integrals, 
+		\hyperref[subsec:upperintegral]{upper integrals}, and \hyperref[subsec:riemannintegrable]{Riemman integrable functions} were added. There are most likely errors in the proofs for the
+		new lemmas, so I would highly recommend that someone look over them as I had some trouble understanding the previous lectures.
 \end{document}
