@@ -242,7 +242,7 @@ firstextra={
 
 \title{{\bf \href{https://www.overleaf.com/read/gyqrjdfnjyvb}{The Compendium}}}
 \author{Alexander Caines}
-\date{0.0.3}
+\date{0.0.4}
 \begin{document}
 \maketitle
 
@@ -1291,6 +1291,100 @@ email, make note of
 				$\sum_R s = \sum_{i=1}^n{a_i(x_i - x_{i-1})} \leq \sum_{i=1}{A_i(x_i - x_{i-1})} = \sum_R S$.
 				\QED
 			\end{lemm}
+		\subsection{ Lemma 7.2.1}
+		\label{subsec:lemm721}
+			\begin{lemm}
+				If $f: [a,b] \to \R$ is a bounded function, then $\underline{\int_a^b}{f} \leq \overline{\int_a^b}{f}$.\hfill\break
+				\horline
+				\textbf{Proof:} Suppose $f:[a,b] \to \R$ is bounded. Let $S$ be a lower step function and $S$ an upper step function. Recall, 
+				$$\underline{\int_a^b}{f} = \sup{\{\sum s | s \}}, \overline{\int_a^b}{f} = \inf{\{\sum S | S \}}$$
+				Then, $\sum s \leq \underline{\int_a^b}{f}$ and $\overline{\int_a^b}{f} \leq \sum S$. By Lemma 7.1.11, $\sum{s} \leq \sum{S}$. For any $S$, $\sum{S}$ is an upper 
+				bound for $\{\sum{s} | s\}$. So, $\underline{\int_a^b}{f} = \sup{ \{\sum{s} | s\}} \leq \sum{S}$. Since the above is true for all $S$, $\int_a^b{f}$ is a lower bound for 
+				$\{\sum{S} | S\}$. So, $\underline{\int_a^b}{f} \leq \inf{\{\sum{s} | s \}} \leq \overline{\int_a^b}{f}$.\footnote{This lemma implies that for a bounded function $f$, 
+				upper step function $S$, and lower step function $s$, $\sum{s} \leq \underline{\int_a^b}{f} \leq \overline{\int_a^b}{f} \leq \sum{S}$.}
+				\QED
+			\end{lemm}
+		
+		\subsection{Corollary 7.2.2}
+		\label{subsec:cor722}
+			\begin{cor}
+				Suppose $f$ is integrable. If $I \in \R \ni \sum{s} \leq I \leq \sum{S}, \forall s, S$, then $\int_a^b{f} = I$.
+			\end{cor}
+
+		\subsection{Theorem 7.2.3 (Existence Theorem for Integrals)}
+		\label{subsec:theor723}
+			\begin{theor}
+				Let $f:[a,b] \to \R$ be a bounded function. Then, $f$ is integrable if and only if given any $\varepsilon > 0$, there exists a lower step function $s_{\varepsilon}$ and 
+				an upper step function $S_{\varepsilon}$ such that $$\sum{s_{\varepsilon}} - \sum{S_{\varepsilon}} < \varepsilon$$
+				\horline
+				\textbf{Proof:}\hfill\break
+				($\Rightarrow$) Suppose $f$ is integrable. Let $\varepsilon > 0$ be given. Choose $s_{\varepsilon}$ to be a lower step function such that $\underline{\int_a^b}{f} < 
+				\sum{s_{\varepsilon} + \frac{\varepsilon}{2}}$. Choose $S_{\varepsilon}$ to be an upper step function such that 
+				$$\sum{S_{\varepsilon}} - \frac{\varepsilon}{2} < \overline{\int_a^b}{f}$$
+				Since $\underline{\int_a^b}{f} = \overline{\int_a^b}{f}$,
+				$$\sum{S_{\varepsilon} - \frac{\varepsilon}{2}} < \sum{s_{\varepsilon} + \frac{\varepsilon}{2}} \implies \sum{S_{\varepsilon}} - \sum{s_{\varepsilon}} < \varepsilon$$
+				($\Leftarrow$) Now, suppose $\exists s_{\varepsilon}, S_{\varepsilon} \ni \sum{S_{\varepsilon}} - \sum{s_{\varepsilon}} < \varepsilon, \forall \varepsilon > 0$. Restated, 
+				suppose $f$ is not integrable. The contrapositive is to be shown. It follows that $\underline{\int_a^b}{f} \neq \overline{\int_a^b}{f}$. Furthermore,
+				$$\underline{\int_a^b}{f} < \overline{\int_a^b}{f}$$
+				Let $\varepsilon := (\overline{\int_a^b}{f} - \underline{\int_a^b}{f})$. If $s_{\varepsilon}$ is a lower step function and $S_{\varepsilon}$ is an upper step function, 
+				then $$\sum{s} \leq \underline{\int_a^b}{f} = \overline{\int_a^b}{f} - \varepsilon \leq \sum{S_{\varepsilon}} - \varepsilon$$
+				So, $\varepsilon \leq \sum{S_{\varepsilon}} - \sum{s_{\varepsilon}}$. Thus the contrapositive has been shown.
+				\QED
+			\end{theor}
+
+		\subsection{Corollary 7.2.4}
+		\label{subsec:cor724}
+			\begin{cor}
+				Let $f:[a,b] \to \R$ be bounded. If there are lower step functions $s_n$ and upper step functions $S_n$ such that the sequence $(\sum{S_n} - \sum{s_n})$ is null. Then, 
+				$f$ is integrable.
+			\end{cor}
+
+		\subsection{Theorem 7.2.5 (Evaluation Theorem for Integrals)}
+		\label{subsec:theor725}
+			\begin{theor}
+				Let $f:[a,b] \to \R$ be a bounded function and $I \in \R$. Suppose that $\forall \varepsilon > 0$, there is a lower step function $s_{\varepsilon}$ and upper step 
+				function $S_{\varepsilon}$ such that 
+				$$\sum{S_{\varepsilon}} - \sum{s_{\varepsilon}} < \varepsilon \text{ and } \sum{s_{\varepsilon}} \leq I \leq \sum{S_{\varepsilon}}$$
+				implies, $f$ is integrable and furthermore that $\int_a^b{f} = I$.\hfill\break
+				\horline
+				\textbf{Proof:} Suppose $\int_a^b{f} \neq I$. Let $\varepsilon := \frac{1}{2}|I - \int_a^b{f}|$. Then, $I$ and $\int_a^b{f}$ are both in the interval 
+				$[\sum{s_{\varepsilon}}, \sum{S_{\varepsilon}}]$. Since the length of the interval is less than $\varepsilon$, $|I - \int_a^b{f}| < \varepsilon$. But, 
+				$\varepsilon = \frac{1}{2}|I - \int_a^b{f}|$. So, by contradiction, $\int_a^b{f} = I$.
+				\QED
+			\end{theor}
+
+		\subsection{Theorem 7.3.1}
+		\label{subsec:theor731}
+			\begin{theor}
+				If $f:[a,b] \to \R$ is a step function, then $f$ is integrable and $\int_a^b{f} = \sum{f}$. \hfill\break
+				\horline
+				\textbf{Proof:} Let $s = f$, $S = f_1$, and $\varepsilon > 0$. So, $f$ is not only a step function, but is is both a lower and an upper step function. So, 
+				$\sum{S} - \sum{s} = 0 < \varepsilon$. Thus, $\sum{s} \leq \sum{f} \leq \sum{S}$. 
+				\QED
+			\end{theor}
+		\subsection{Theorem 7.3.2}
+		\label{subsec:theor732}
+			\begin{theor}
+				Let $\varepsilon > 0$ be given. Without loss of generality, suppose $f$ is increasing. Since $f(a) \leq f(x) \leq f(b), \forall x  \in [a,b]$, $f$ is bounded. 
+				Let $n \in \N \ni (f(b) - f(a)) \cdot \big(\frac{b-a}{n}\big) < \varepsilon$. Note, $(f(b) - f(a)), (b-a) > 0$. So, 
+				$$\frac{\varepsilon}{(f(b) - f(a))(b-a)} > 0 \implies \exists N \in \N \ni \frac{1}{10^N} <  \frac{\varepsilon}{(f(b) - f(a))(b-a)}$$
+				Define partition $x_i := a_i + \big(\frac{b-a}{n}\big)i$ for $i = 0,\dots,n$. Since $f$ is increasing, $s(x) = f(x_{i-1})$ for $x \in (x_{i-1},x_i)$ is a lower step
+				function.\footnote{Since you can pick the left side and always get something smaller} Similarly, $S(x) = f(x_i)$ for $x \in (x_{i-1}, x_i)$ is an upper step function.
+				Then, 
+					\begin{center}
+						\begin{math}
+							\begin{aligned}
+								\sum{S} - \sum{s} & = \sum_{i = 1}^n{f(x_i)(x_i - x_{i-1}} - \sum_{i = 1}^n{f(x_{i-1})(x_i-x_{i-1})}\\
+								& = \sum_{i=1}^n{f(x_i) - f(x_{i-1})\big(\frac{b-a}{n}\big)}\\
+								& = \bigg(\frac{b-a}{n}\bigg)(f(a) - f(b))\\
+								& < \varepsilon
+							\end{aligned}
+						\end{math}
+					\end{center}
+				\QED
+
+			\end{theor}
+						
 \newpage
 \section{Version History}
 	\subsection{\href{https://www.overleaf.com/read/gyqrjdfnjyvb}{v0.0.0 (4/2/2020)}}
@@ -1302,7 +1396,11 @@ email, make note of
 	\subsection{v0.0.3 (4/14/2020)}
 		Added \hyperref[subsec:lemm711]{Lemma 7.1.1}, \hyperref[subsec:lemm718]{Lemma 7.1.8}, \hyperref[subsec:cor719]{Corollary 7.1.9}, and \hyperref[subsec:lemm7111]{Lemma 7.1.11}.
 		Additionally, the definitions for \hyperref[subsec:partition]{partitions}, \hyperref[subsec:refinement]{refinements}, \hyperref[subsec:lowerstepfunction]{lower}, 
-		\hyperref[subsec:upperstepfunction]{upper}, and \hyperref[subsec:stepfuction]{general} step functions as well as \hyperref[subsec:lowerintegral]{lower} integrals, 
+		\hyperref[subsec:upperstepfunction]{upper}, and \hyperref[subsec:stepfunction]{general} step functions as well as \hyperref[subsec:lowerintegral]{lower} integrals, 
 		\hyperref[subsec:upperintegral]{upper integrals}, and \hyperref[subsec:riemannintegrable]{Riemman integrable functions} were added. There are most likely errors in the proofs for the
 		new lemmas, so I would highly recommend that someone look over them as I had some trouble understanding the previous lectures.
+
+	\subsection{v0.0.4 (4/19/2020)}
+		Added \hyperref[subsec:lemm721]{Lemma 7.2.1}, \hyperref[subsec:cor722]{Corollary 7.2.2}, \hyperref[subsec:theor723]{Theorem 7.2.3}, \hyperref[subsec:cor724]{Corollary 7.2.4}, 
+		\hyperref[subsec:theor725]{the evaluation theorem for integrals}, \hyperref[subsec:theor731]{Theorem 7.3.1}, and \hyperref[subsec:theor732]{Theorem 7.3.2}.
 \end{document}
