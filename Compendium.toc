@@ -45,72 +45,77 @@
 \contentsline {subsection}{\numberline {0.1.42}Upper Integral}{20}{subsection.0.1.42}%
 \contentsline {subsection}{\numberline {0.1.43}Riemann Integrable}{21}{subsection.0.1.43}%
 \contentsline {subsection}{\numberline {0.1.44}Refinement}{21}{subsection.0.1.44}%
+\contentsline {subsection}{\numberline {0.1.45}Positive part}{22}{subsection.0.1.45}%
+\contentsline {subsection}{\numberline {0.1.46}Negative part}{22}{subsection.0.1.46}%
 \contentsline {section}{\numberline {0.2}Theorems, Lemmas, Corollaries, and Proofs}{22}{section.0.2}%
 \contentsline {subsection}{\numberline {0.2.1}Theorem 1.1.1}{22}{subsection.0.2.1}%
 \contentsline {subsection}{\numberline {0.2.2}Theorem 1.1.2}{22}{subsection.0.2.2}%
-\contentsline {subsection}{\numberline {0.2.3}Lemma 1.1.4 (Archimedean property)}{22}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {0.2.3}Lemma 1.1.4 (Archimedean property)}{23}{subsection.0.2.3}%
 \contentsline {subsection}{\numberline {0.2.4}Corollary 1.1.5}{23}{subsection.0.2.4}%
 \contentsline {subsection}{\numberline {0.2.5}Theorem 1.1.6 (Density of the Rationals in the Reals)}{23}{subsection.0.2.5}%
-\contentsline {subsection}{\numberline {0.2.6}Theorem 1.1.8 (Density of Irrationals in the Reals)}{24}{subsection.0.2.6}%
-\contentsline {subsection}{\numberline {0.2.7}Theorem 1.3.12 (Local boundedness)}{24}{subsection.0.2.7}%
-\contentsline {subsection}{\numberline {0.2.8}Lemma 1.4.2 (Constant multiple rule)}{25}{subsection.0.2.8}%
-\contentsline {subsection}{\numberline {0.2.9}Theorem 1.4.1 (Linearity)}{25}{subsection.0.2.9}%
-\contentsline {subsection}{\numberline {0.2.10}Lemma 1.4.4 (Sum Rule)}{25}{subsection.0.2.10}%
-\contentsline {subsection}{\numberline {0.2.11}Theorem 1.4.6 (Product Rule)}{27}{subsection.0.2.11}%
-\contentsline {subsection}{\numberline {0.2.12}Theorem 1.4.9 (Quotient Rule)}{28}{subsection.0.2.12}%
-\contentsline {subsection}{\numberline {0.2.13}Theorem 1.4.14 (Composition Rule)}{28}{subsection.0.2.13}%
-\contentsline {subsection}{\numberline {0.2.14}Theorem 1.4.16 (Squeeze Theorem)}{29}{subsection.0.2.14}%
-\contentsline {subsection}{\numberline {0.2.15}Theorem 1.4.19}{29}{subsection.0.2.15}%
-\contentsline {subsection}{\numberline {0.2.16}Corollary 1.4.20}{30}{subsection.0.2.16}%
-\contentsline {subsection}{\numberline {0.2.17}Theorem (Convergence of Bounded Sequences)}{30}{subsection.0.2.17}%
-\contentsline {subsection}{\numberline {0.2.18}Theorem (Threshold of Convergent Sequences)}{30}{subsection.0.2.18}%
-\contentsline {subsection}{\numberline {0.2.19}Theorem (Properties of Convergent Sequences)}{31}{subsection.0.2.19}%
-\contentsline {subsection}{\numberline {0.2.20}Theorem 2.1.1 (Continuity of Composed Functions)}{31}{subsection.0.2.20}%
+\contentsline {subsection}{\numberline {0.2.6}Theorem 1.1.8 (Density of Irrationals in the Reals)}{25}{subsection.0.2.6}%
+\contentsline {subsection}{\numberline {0.2.7}Theorem 1.3.12 (Local boundedness)}{25}{subsection.0.2.7}%
+\contentsline {subsection}{\numberline {0.2.8}Lemma 1.4.2 (Constant multiple rule)}{26}{subsection.0.2.8}%
+\contentsline {subsection}{\numberline {0.2.9}Theorem 1.4.1 (Linearity)}{26}{subsection.0.2.9}%
+\contentsline {subsection}{\numberline {0.2.10}Lemma 1.4.4 (Sum Rule)}{26}{subsection.0.2.10}%
+\contentsline {subsection}{\numberline {0.2.11}Theorem 1.4.6 (Product Rule)}{28}{subsection.0.2.11}%
+\contentsline {subsection}{\numberline {0.2.12}Theorem 1.4.9 (Quotient Rule)}{29}{subsection.0.2.12}%
+\contentsline {subsection}{\numberline {0.2.13}Theorem 1.4.14 (Composition Rule)}{29}{subsection.0.2.13}%
+\contentsline {subsection}{\numberline {0.2.14}Theorem 1.4.16 (Squeeze Theorem)}{30}{subsection.0.2.14}%
+\contentsline {subsection}{\numberline {0.2.15}Theorem 1.4.19}{30}{subsection.0.2.15}%
+\contentsline {subsection}{\numberline {0.2.16}Corollary 1.4.20}{31}{subsection.0.2.16}%
+\contentsline {subsection}{\numberline {0.2.17}Theorem (Convergence of Bounded Sequences)}{31}{subsection.0.2.17}%
+\contentsline {subsection}{\numberline {0.2.18}Theorem (Threshold of Convergent Sequences)}{31}{subsection.0.2.18}%
+\contentsline {subsection}{\numberline {0.2.19}Theorem (Properties of Convergent Sequences)}{32}{subsection.0.2.19}%
+\contentsline {subsection}{\numberline {0.2.20}Theorem 2.1.1 (Continuity of Composed Functions)}{32}{subsection.0.2.20}%
 \global \c@tocdepth 3\relax 
-\contentsline {subsection}{\numberline {0.2.21}Theorem 3.1.5 (Order Completeness)}{32}{subsection.0.2.21}%
-\contentsline {subsection}{\numberline {0.2.22}Theorem 3.1.8 (Greatest Lower Bound Theorem)}{32}{subsection.0.2.22}%
-\contentsline {subsection}{\numberline {0.2.23}Theorem 3.2.1 (Interval Theorem)}{32}{subsection.0.2.23}%
-\contentsline {subsection}{\numberline {0.2.24}Theorem 3.3.2 (Nested Interval Theorem)}{33}{subsection.0.2.24}%
-\contentsline {subsection}{\numberline {0.2.25}Corollary 3.3.4 (Binary Nested Interval Theorem)}{33}{subsection.0.2.25}%
-\contentsline {subsection}{\numberline {0.2.26}Theorem 3.5.1 (Roots of an Exponential)}{33}{subsection.0.2.26}%
-\contentsline {subsection}{\numberline {0.2.27}Theorem 3.5.4 (Irrationality of the Square Root of Two)}{34}{subsection.0.2.27}%
-\contentsline {subsection}{\numberline {0.2.28}Lemma (Finite Union of Countable Sets)}{34}{subsection.0.2.28}%
-\contentsline {subsection}{\numberline {0.2.29}Lemma (Infinite Union of Finite Sets)}{34}{subsection.0.2.29}%
-\contentsline {subsection}{\numberline {0.2.30}Theorem 4.1.5 (Infinite Union of Countable Sets)}{34}{subsection.0.2.30}%
-\contentsline {subsection}{\numberline {0.2.31}Theorem 4.1.7 (Cantor)}{35}{subsection.0.2.31}%
-\contentsline {subsection}{\numberline {0.2.32}Theorem 4.2.1}{35}{subsection.0.2.32}%
-\contentsline {subsection}{\numberline {0.2.33}Theorem (Cantor-Bernstein-Schr{\"o}der Theorem)}{35}{subsection.0.2.33}%
-\contentsline {subsection}{\numberline {0.2.34}Theorem (Jump Discontinuity Theorem)}{37}{subsection.0.2.34}%
-\contentsline {subsection}{\numberline {0.2.35}Corollary 5.1.4}{37}{subsection.0.2.35}%
-\contentsline {subsection}{\numberline {0.2.36}Theorem 5.1.6 (Continuity Theorem for Monotone Functions)}{37}{subsection.0.2.36}%
-\contentsline {subsection}{\numberline {0.2.37}Corollary 5.1.8}{38}{subsection.0.2.37}%
-\contentsline {subsection}{\numberline {0.2.38}Corollary 5.1.9}{38}{subsection.0.2.38}%
-\contentsline {subsection}{\numberline {0.2.39}Corollary 5.1.10}{38}{subsection.0.2.39}%
-\contentsline {subsection}{\numberline {0.2.40}Theorem 5.2.1 (Bolzano's Intermediate Value Theorem)}{39}{subsection.0.2.40}%
-\contentsline {subsection}{\numberline {0.2.41}Theorem 5.2.2 (Intermediate Value Theorem)}{39}{subsection.0.2.41}%
-\contentsline {subsection}{\numberline {0.2.42}Corollary 5.2.3}{40}{subsection.0.2.42}%
-\contentsline {subsection}{\numberline {0.2.43}Theorem 5.5.3 (Global Boundedness Theorem)}{40}{subsection.0.2.43}%
-\contentsline {subsection}{\numberline {0.2.44}Theorem 5.3.5 (Extreme Value Theorem)}{41}{subsection.0.2.44}%
-\contentsline {subsection}{\numberline {0.2.45}Corollary 5.3.6}{41}{subsection.0.2.45}%
-\contentsline {subsection}{\numberline {0.2.46}Lemma 5.4.5}{42}{subsection.0.2.46}%
-\contentsline {subsection}{\numberline {0.2.47}Theorem 5.4.6 (Uniform Continuity Theorem)}{42}{subsection.0.2.47}%
-\contentsline {subsection}{\numberline {0.2.48}Theorem (Product Rule)}{42}{subsection.0.2.48}%
-\contentsline {subsection}{\numberline {0.2.49}Theorem (Chain Rule)}{43}{subsection.0.2.49}%
-\contentsline {subsection}{\numberline {0.2.50}Theorem (Quotient Rule)}{43}{subsection.0.2.50}%
-\contentsline {subsection}{\numberline {0.2.51}Lemma 7.1.1}{43}{subsection.0.2.51}%
-\contentsline {subsection}{\numberline {0.2.52}Lemma 7.1.8}{43}{subsection.0.2.52}%
-\contentsline {subsection}{\numberline {0.2.53}Corollary 7.1.9}{44}{subsection.0.2.53}%
-\contentsline {subsection}{\numberline {0.2.54}Lemma 7.1.11}{44}{subsection.0.2.54}%
-\contentsline {subsection}{\numberline {0.2.55} Lemma 7.2.1}{45}{subsection.0.2.55}%
-\contentsline {subsection}{\numberline {0.2.56}Corollary 7.2.2}{45}{subsection.0.2.56}%
-\contentsline {subsection}{\numberline {0.2.57}Theorem 7.2.3 (Existence Theorem for Integrals)}{45}{subsection.0.2.57}%
-\contentsline {subsection}{\numberline {0.2.58}Corollary 7.2.4}{46}{subsection.0.2.58}%
-\contentsline {subsection}{\numberline {0.2.59}Theorem 7.2.5 (Evaluation Theorem for Integrals)}{46}{subsection.0.2.59}%
-\contentsline {subsection}{\numberline {0.2.60}Theorem 7.3.1}{47}{subsection.0.2.60}%
-\contentsline {subsection}{\numberline {0.2.61}Theorem 7.3.2}{47}{subsection.0.2.61}%
-\contentsline {section}{\numberline {0.3}Version History}{49}{section.0.3}%
-\contentsline {subsection}{\numberline {0.3.1}\href {https://www.overleaf.com/read/gyqrjdfnjyvb}{v0.0.0 (4/2/2020)}}{49}{subsection.0.3.1}%
-\contentsline {subsection}{\numberline {0.3.2}v0.0.1 (4/2/2020)}{49}{subsection.0.3.2}%
-\contentsline {subsection}{\numberline {0.3.3}v0.0.2 (4/7/2020)}{49}{subsection.0.3.3}%
-\contentsline {subsection}{\numberline {0.3.4}v0.0.3 (4/14/2020)}{49}{subsection.0.3.4}%
-\contentsline {subsection}{\numberline {0.3.5}v0.0.4 (4/19/2020)}{49}{subsection.0.3.5}%
+\contentsline {subsection}{\numberline {0.2.21}Theorem 3.1.5 (Order Completeness)}{33}{subsection.0.2.21}%
+\contentsline {subsection}{\numberline {0.2.22}Theorem 3.1.8 (Greatest Lower Bound Theorem)}{33}{subsection.0.2.22}%
+\contentsline {subsection}{\numberline {0.2.23}Theorem 3.2.1 (Interval Theorem)}{33}{subsection.0.2.23}%
+\contentsline {subsection}{\numberline {0.2.24}Theorem 3.3.2 (Nested Interval Theorem)}{34}{subsection.0.2.24}%
+\contentsline {subsection}{\numberline {0.2.25}Corollary 3.3.4 (Binary Nested Interval Theorem)}{34}{subsection.0.2.25}%
+\contentsline {subsection}{\numberline {0.2.26}Theorem 3.5.1 (Roots of an Exponential)}{34}{subsection.0.2.26}%
+\contentsline {subsection}{\numberline {0.2.27}Theorem 3.5.4 (Irrationality of the Square Root of Two)}{35}{subsection.0.2.27}%
+\contentsline {subsection}{\numberline {0.2.28}Lemma (Finite Union of Countable Sets)}{35}{subsection.0.2.28}%
+\contentsline {subsection}{\numberline {0.2.29}Lemma (Infinite Union of Finite Sets)}{35}{subsection.0.2.29}%
+\contentsline {subsection}{\numberline {0.2.30}Theorem 4.1.5 (Infinite Union of Countable Sets)}{35}{subsection.0.2.30}%
+\contentsline {subsection}{\numberline {0.2.31}Theorem 4.1.7 (Cantor)}{36}{subsection.0.2.31}%
+\contentsline {subsection}{\numberline {0.2.32}Theorem 4.2.1}{36}{subsection.0.2.32}%
+\contentsline {subsection}{\numberline {0.2.33}Theorem (Cantor-Bernstein-Schr{\"o}der Theorem)}{36}{subsection.0.2.33}%
+\contentsline {subsection}{\numberline {0.2.34}Theorem (Jump Discontinuity Theorem)}{38}{subsection.0.2.34}%
+\contentsline {subsection}{\numberline {0.2.35}Corollary 5.1.4}{38}{subsection.0.2.35}%
+\contentsline {subsection}{\numberline {0.2.36}Theorem 5.1.6 (Continuity Theorem for Monotone Functions)}{38}{subsection.0.2.36}%
+\contentsline {subsection}{\numberline {0.2.37}Corollary 5.1.8}{39}{subsection.0.2.37}%
+\contentsline {subsection}{\numberline {0.2.38}Corollary 5.1.9}{39}{subsection.0.2.38}%
+\contentsline {subsection}{\numberline {0.2.39}Corollary 5.1.10}{39}{subsection.0.2.39}%
+\contentsline {subsection}{\numberline {0.2.40}Theorem 5.2.1 (Bolzano's Intermediate Value Theorem)}{40}{subsection.0.2.40}%
+\contentsline {subsection}{\numberline {0.2.41}Theorem 5.2.2 (Intermediate Value Theorem)}{40}{subsection.0.2.41}%
+\contentsline {subsection}{\numberline {0.2.42}Corollary 5.2.3}{41}{subsection.0.2.42}%
+\contentsline {subsection}{\numberline {0.2.43}Theorem 5.5.3 (Global Boundedness Theorem)}{41}{subsection.0.2.43}%
+\contentsline {subsection}{\numberline {0.2.44}Theorem 5.3.5 (Extreme Value Theorem)}{42}{subsection.0.2.44}%
+\contentsline {subsection}{\numberline {0.2.45}Corollary 5.3.6}{42}{subsection.0.2.45}%
+\contentsline {subsection}{\numberline {0.2.46}Lemma 5.4.5}{43}{subsection.0.2.46}%
+\contentsline {subsection}{\numberline {0.2.47}Theorem 5.4.6 (Uniform Continuity Theorem)}{43}{subsection.0.2.47}%
+\contentsline {subsection}{\numberline {0.2.48}Theorem (Product Rule)}{43}{subsection.0.2.48}%
+\contentsline {subsection}{\numberline {0.2.49}Theorem (Chain Rule)}{44}{subsection.0.2.49}%
+\contentsline {subsection}{\numberline {0.2.50}Theorem (Quotient Rule)}{44}{subsection.0.2.50}%
+\contentsline {subsection}{\numberline {0.2.51}Lemma 7.1.1}{44}{subsection.0.2.51}%
+\contentsline {subsection}{\numberline {0.2.52}Lemma 7.1.8}{44}{subsection.0.2.52}%
+\contentsline {subsection}{\numberline {0.2.53}Corollary 7.1.9}{45}{subsection.0.2.53}%
+\contentsline {subsection}{\numberline {0.2.54}Lemma 7.1.11}{45}{subsection.0.2.54}%
+\contentsline {subsection}{\numberline {0.2.55} Lemma 7.2.1}{46}{subsection.0.2.55}%
+\contentsline {subsection}{\numberline {0.2.56}Corollary 7.2.2}{46}{subsection.0.2.56}%
+\contentsline {subsection}{\numberline {0.2.57}Theorem 7.2.3 (Existence Theorem for Integrals)}{46}{subsection.0.2.57}%
+\contentsline {subsection}{\numberline {0.2.58}Corollary 7.2.4}{47}{subsection.0.2.58}%
+\contentsline {subsection}{\numberline {0.2.59}Theorem 7.2.5 (Evaluation Theorem for Integrals)}{47}{subsection.0.2.59}%
+\contentsline {subsection}{\numberline {0.2.60}Theorem 7.3.1}{48}{subsection.0.2.60}%
+\contentsline {subsection}{\numberline {0.2.61}Theorem 7.3.2}{48}{subsection.0.2.61}%
+\contentsline {subsection}{\numberline {0.2.62}Theorem 7.3.3}{49}{subsection.0.2.62}%
+\contentsline {subsection}{\numberline {0.2.63}Theorem 7.4.1}{49}{subsection.0.2.63}%
+\contentsline {section}{\numberline {0.3}Version History}{50}{section.0.3}%
+\contentsline {subsection}{\numberline {0.3.1}\href {https://www.overleaf.com/read/gyqrjdfnjyvb}{v0.0.0 (4/2/2020)}}{50}{subsection.0.3.1}%
+\contentsline {subsection}{\numberline {0.3.2}v0.0.1 (4/2/2020)}{50}{subsection.0.3.2}%
+\contentsline {subsection}{\numberline {0.3.3}v0.0.2 (4/7/2020)}{50}{subsection.0.3.3}%
+\contentsline {subsection}{\numberline {0.3.4}v0.0.3 (4/14/2020)}{50}{subsection.0.3.4}%
+\contentsline {subsection}{\numberline {0.3.5}v0.0.4 (4/19/2020)}{50}{subsection.0.3.5}%
+\contentsline {subsection}{\numberline {0.3.6}v0.0.5 (4/21/2020)}{50}{subsection.0.3.6}%

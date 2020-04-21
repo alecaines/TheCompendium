@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.12)  19 APR 2020 11:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.12)  21 APR 2020 12:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -931,11 +931,11 @@ Package hyperref Info: Option `pdfnewwindow' set `true' on input line 251.
  [2] [3] [4] (./Compendium.toc
 [5
 
-] [6])
+] [6] [7])
 \tf@toc=\write5
 \openout5 = `Compendium.toc'.
 
- [7] [8]
+ [8]
 Package mdframed Info: mdframed works in twoside mode on input line 334.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1184,326 +1184,347 @@ Package mdframed Info: mdframed works in twoside mode on input line 680.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 680.
-[21]
 Package mdframed Info: mdframed works in twoside mode on input line 687.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 687.
-Package mdframed Info: mdframed works in twoside mode on input line 691.
+[21]
+Package mdframed Info: mdframed works in twoside mode on input line 692.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 691.
-Package mdframed Info: mdframed works in twoside mode on input line 695.
+(mdframed)              on input line 692.
+Package mdframed Info: mdframed works in twoside mode on input line 697.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 695.
-Package mdframed Info: mdframed works in twoside mode on input line 709.
+(mdframed)              on input line 697.
+Package mdframed Info: mdframed works in twoside mode on input line 701.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 709.
-Package mdframed Info: mdframed works in twoside mode on input line 722.
+(mdframed)              on input line 701.
+Package mdframed Info: mdframed works in twoside mode on input line 705.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 722.
+(mdframed)              on input line 705.
+Package mdframed Info: mdframed works in twoside mode on input line 719.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 719.
  [22]
-Package mdframed Info: Not enough space on this page on input line 730.
-Package mdframed Info: mdframed works in twoside mode on input line 734.
+Package mdframed Info: Not enough space on this page on input line 727.
+Package mdframed Info: mdframed works in twoside mode on input line 732.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 734.
-Package mdframed Info: mdframed works in twoside mode on input line 739.
+(mdframed)              on input line 732.
+Package mdframed Info: mdframed works in twoside mode on input line 744.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 739.
+(mdframed)              on input line 744.
+Package mdframed Info: mdframed works in twoside mode on input line 749.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 749.
+
+Underfull \vbox (badness 4316) has occurred while \output is active []
+
  [23]
-Package mdframed Info: mdframed works in twoside mode on input line 757.
+[24]
+Package mdframed Info: mdframed works in twoside mode on input line 767.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 757.
-Package mdframed Info: mdframed works in twoside mode on input line 762.
+(mdframed)              on input line 767.
+Package mdframed Info: mdframed works in twoside mode on input line 772.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 762.
- [24]
-Package mdframed Info: mdframed works in twoside mode on input line 783.
+(mdframed)              on input line 772.
+ [25]
+Package mdframed Info: mdframed works in twoside mode on input line 793.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 783.
-Package mdframed Info: mdframed works in twoside mode on input line 787.
+(mdframed)              on input line 793.
+Package mdframed Info: mdframed works in twoside mode on input line 797.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 787.
-Package mdframed Info: mdframed works in twoside mode on input line 815.
+(mdframed)              on input line 797.
+Package mdframed Info: mdframed works in twoside mode on input line 825.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 815.
- [25] [26]
-Package mdframed Info: mdframed works in twoside mode on input line 831.
+(mdframed)              on input line 825.
+ [26] [27]
+Package mdframed Info: mdframed works in twoside mode on input line 841.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 831.
-Package mdframed Info: mdframed works in twoside mode on input line 844.
+(mdframed)              on input line 841.
+Package mdframed Info: mdframed works in twoside mode on input line 854.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 844.
- [27]
-Package mdframed Info: mdframed works in twoside mode on input line 864.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 864.
-Package mdframed Info: mdframed works in twoside mode on input line 879.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 879.
+(mdframed)              on input line 854.
  [28]
-Package mdframed Info: mdframed works in twoside mode on input line 893.
+Package mdframed Info: mdframed works in twoside mode on input line 874.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 893.
-Package mdframed Info: mdframed works in twoside mode on input line 905.
+(mdframed)              on input line 874.
+Package mdframed Info: mdframed works in twoside mode on input line 889.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 905.
+(mdframed)              on input line 889.
  [29]
-Package mdframed Info: mdframed works in twoside mode on input line 916.
+Package mdframed Info: mdframed works in twoside mode on input line 903.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 916.
-Package mdframed Info: mdframed works in twoside mode on input line 920.
+(mdframed)              on input line 903.
+Package mdframed Info: mdframed works in twoside mode on input line 915.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 920.
-Package mdframed Info: mdframed works in twoside mode on input line 928.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 928.
-Package mdframed Info: mdframed works in twoside mode on input line 937.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 937.
+(mdframed)              on input line 915.
  [30]
-Package mdframed Info: mdframed works in twoside mode on input line 943.
+Package mdframed Info: mdframed works in twoside mode on input line 926.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 943.
-Package mdframed Info: mdframed works in twoside mode on input line 954.
+(mdframed)              on input line 926.
+Package mdframed Info: mdframed works in twoside mode on input line 930.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 954.
+(mdframed)              on input line 930.
+Package mdframed Info: mdframed works in twoside mode on input line 938.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 938.
+Package mdframed Info: mdframed works in twoside mode on input line 947.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 947.
  [31]
-Package mdframed Info: mdframed works in twoside mode on input line 977.
+Package mdframed Info: mdframed works in twoside mode on input line 953.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 977.
-Package mdframed Info: mdframed works in twoside mode on input line 983.
+(mdframed)              on input line 953.
+Package mdframed Info: mdframed works in twoside mode on input line 964.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 983.
-Package mdframed Info: mdframed works in twoside mode on input line 988.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 988.
+(mdframed)              on input line 964.
  [32]
-Package mdframed Info: mdframed works in twoside mode on input line 1001.
+Package mdframed Info: mdframed works in twoside mode on input line 987.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1001.
-Package mdframed Info: mdframed works in twoside mode on input line 1019.
+(mdframed)              on input line 987.
+Package mdframed Info: mdframed works in twoside mode on input line 993.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1019.
-Package mdframed Info: mdframed works in twoside mode on input line 1026.
+(mdframed)              on input line 993.
+Package mdframed Info: mdframed works in twoside mode on input line 998.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1026.
+(mdframed)              on input line 998.
  [33]
-Package mdframed Info: mdframed works in twoside mode on input line 1031.
+Package mdframed Info: mdframed works in twoside mode on input line 1011.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1031.
-Package mdframed Info: mdframed works in twoside mode on input line 1038.
+(mdframed)              on input line 1011.
+Package mdframed Info: mdframed works in twoside mode on input line 1029.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1038.
-Package mdframed Info: mdframed works in twoside mode on input line 1046.
+(mdframed)              on input line 1029.
+Package mdframed Info: mdframed works in twoside mode on input line 1036.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1046.
-Package mdframed Info: mdframed works in twoside mode on input line 1052.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1052.
+(mdframed)              on input line 1036.
  [34]
-Package mdframed Info: mdframed works in twoside mode on input line 1059.
+Package mdframed Info: mdframed works in twoside mode on input line 1041.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1059.
-Package mdframed Info: mdframed works in twoside mode on input line 1068.
+(mdframed)              on input line 1041.
+Package mdframed Info: mdframed works in twoside mode on input line 1048.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1068.
-Package mdframed Info: mdframed works in twoside mode on input line 1073.
+(mdframed)              on input line 1048.
+Package mdframed Info: mdframed works in twoside mode on input line 1056.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1073.
-Package mdframed Info: mdframed works in twoside mode on input line 1076.
+(mdframed)              on input line 1056.
+Package mdframed Info: mdframed works in twoside mode on input line 1062.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1076.
+(mdframed)              on input line 1062.
+ [35]
+Package mdframed Info: mdframed works in twoside mode on input line 1069.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1069.
+Package mdframed Info: mdframed works in twoside mode on input line 1078.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1078.
+Package mdframed Info: mdframed works in twoside mode on input line 1083.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1083.
+Package mdframed Info: mdframed works in twoside mode on input line 1086.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1086.
 
 Underfull \vbox (badness 6332) has occurred while \output is active []
 
- [35]
-[36]
-Package mdframed Info: mdframed works in twoside mode on input line 1087.
+ [36]
+[37]
+Package mdframed Info: mdframed works in twoside mode on input line 1097.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1087.
-Package mdframed Info: mdframed works in twoside mode on input line 1094.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1094.
+(mdframed)              on input line 1097.
 Package mdframed Info: mdframed works in twoside mode on input line 1104.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1104.
- [37]
-Package mdframed Info: mdframed works in twoside mode on input line 1111.
+Package mdframed Info: mdframed works in twoside mode on input line 1114.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1111.
-Package mdframed Info: mdframed works in twoside mode on input line 1117.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1117.
-Package mdframed Info: mdframed works in twoside mode on input line 1123.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1123.
+(mdframed)              on input line 1114.
  [38]
-Package mdframed Info: mdframed works in twoside mode on input line 1134.
+Package mdframed Info: mdframed works in twoside mode on input line 1121.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1134.
-Package mdframed Info: mdframed works in twoside mode on input line 1149.
+(mdframed)              on input line 1121.
+Package mdframed Info: mdframed works in twoside mode on input line 1127.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1149.
+(mdframed)              on input line 1127.
+Package mdframed Info: mdframed works in twoside mode on input line 1133.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1133.
  [39]
+Package mdframed Info: mdframed works in twoside mode on input line 1144.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1144.
 Package mdframed Info: mdframed works in twoside mode on input line 1159.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1159.
-Package mdframed Info: mdframed works in twoside mode on input line 1165.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1165.
  [40]
-Package mdframed Info: mdframed works in twoside mode on input line 1180.
+Package mdframed Info: mdframed works in twoside mode on input line 1169.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1180.
-Package mdframed Info: mdframed works in twoside mode on input line 1195.
+(mdframed)              on input line 1169.
+Package mdframed Info: mdframed works in twoside mode on input line 1175.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1195.
+(mdframed)              on input line 1175.
  [41]
-Package mdframed Info: mdframed works in twoside mode on input line 1203.
+Package mdframed Info: mdframed works in twoside mode on input line 1190.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1203.
-Package mdframed Info: mdframed works in twoside mode on input line 1215.
+(mdframed)              on input line 1190.
+Package mdframed Info: mdframed works in twoside mode on input line 1205.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1215.
-Package mdframed Info: mdframed works in twoside mode on input line 1237.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1237.
+(mdframed)              on input line 1205.
  [42]
-Package mdframed Info: Not enough space on this page on input line 1239.
-Package mdframed Info: mdframed works in twoside mode on input line 1244.
+Package mdframed Info: mdframed works in twoside mode on input line 1213.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1244.
-Package mdframed Info: mdframed works in twoside mode on input line 1251.
+(mdframed)              on input line 1213.
+Package mdframed Info: mdframed works in twoside mode on input line 1225.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1251.
-Package mdframed Info: mdframed works in twoside mode on input line 1258.
+(mdframed)              on input line 1225.
+Package mdframed Info: mdframed works in twoside mode on input line 1247.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1258.
-Package mdframed Info: mdframed works in twoside mode on input line 1264.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1264.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 1273.
+(mdframed)              on input line 1247.
  [43]
-Package mdframed Info: mdframed works in twoside mode on input line 1278.
+Package mdframed Info: Not enough space on this page on input line 1249.
+Package mdframed Info: mdframed works in twoside mode on input line 1254.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1278.
-Package mdframed Info: mdframed works in twoside mode on input line 1285.
+(mdframed)              on input line 1254.
+Package mdframed Info: mdframed works in twoside mode on input line 1261.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1285.
+(mdframed)              on input line 1261.
+Package mdframed Info: mdframed works in twoside mode on input line 1268.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1268.
+Package mdframed Info: mdframed works in twoside mode on input line 1274.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1274.
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 1293.
+(mdframed)              on input line 1283.
  [44]
-Package mdframed Info: mdframed works in twoside mode on input line 1297.
+Package mdframed Info: mdframed works in twoside mode on input line 1288.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1297.
-Package mdframed Info: mdframed works in twoside mode on input line 1311.
+(mdframed)              on input line 1288.
+Package mdframed Info: mdframed works in twoside mode on input line 1295.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1311.
-Package mdframed Info: mdframed works in twoside mode on input line 1317.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1317.
+(mdframed)              on input line 1295.
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 1333.
+(mdframed)              on input line 1303.
  [45]
-Package mdframed Info: mdframed works in twoside mode on input line 1338.
+Package mdframed Info: mdframed works in twoside mode on input line 1307.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1338.
-Package mdframed Info: mdframed works in twoside mode on input line 1345.
+(mdframed)              on input line 1307.
+Package mdframed Info: mdframed works in twoside mode on input line 1321.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1345.
+(mdframed)              on input line 1321.
+Package mdframed Info: mdframed works in twoside mode on input line 1327.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1327.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 1343.
  [46]
-Package mdframed Info: mdframed works in twoside mode on input line 1359.
+Package mdframed Info: mdframed works in twoside mode on input line 1348.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1359.
-Package mdframed Info: mdframed works in twoside mode on input line 1368.
+(mdframed)              on input line 1348.
+Package mdframed Info: mdframed works in twoside mode on input line 1355.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1368.
- [47] [48] [49]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1406.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1406.
+(mdframed)              on input line 1355.
+ [47]
+Package mdframed Info: mdframed works in twoside mode on input line 1369.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1369.
+Package mdframed Info: mdframed works in twoside mode on input line 1378.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1378.
+ [48]
+Package mdframed Info: mdframed works in twoside mode on input line 1399.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1399.
+Package mdframed Info: mdframed works in twoside mode on input line 1414.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1414.
+ [49] [50]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1439.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1439.
 
 (./Compendium.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1406.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1406.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1439.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1439.
 
 Package rerunfilecheck Info: File `Compendium.out' has not changed.
-(rerunfilecheck)             Checksum: 09B9AC653AB3F3E82FCB67031E9A255E;8947.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1406.
+(rerunfilecheck)             Checksum: 22CBEC99C975A03AE663A7FA456FDE1E;9298.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1439.
  ) 
 Here is how much of TeX's memory you used:
- 20272 strings out of 480994
- 378309 string characters out of 5916032
- 669633 words of memory out of 5000000
- 35048 multiletter control sequences out of 15000+600000
+ 20306 strings out of 480994
+ 378962 string characters out of 5916032
+ 670199 words of memory out of 5000000
+ 35072 multiletter control sequences out of 15000+600000
  547271 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,14n,78p,950b,1127s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1530,10 +1551,10 @@ type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti9.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msam10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on Compendium.pdf (49 pages, 431939 bytes).
+Output written on Compendium.pdf (50 pages, 436570 bytes).
 PDF statistics:
- 1216 PDF objects out of 1440 (max. 8388607)
- 1128 compressed objects within 12 object streams
- 314 named destinations out of 1000 (max. 500000)
- 925 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1255 PDF objects out of 1440 (max. 8388607)
+ 1166 compressed objects within 12 object streams
+ 324 named destinations out of 1000 (max. 500000)
+ 965 words of extra memory for PDF output out of 10000 (max. 10000000)
 

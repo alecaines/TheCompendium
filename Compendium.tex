@@ -242,7 +242,7 @@ firstextra={
 
 \title{{\bf \href{https://www.overleaf.com/read/gyqrjdfnjyvb}{The Compendium}}}
 \author{Alexander Caines}
-\date{0.0.4}
+\date{0.0.5}
 \begin{document}
 \maketitle
 
@@ -681,6 +681,16 @@ email, make note of
 			$$\{x_j | j = 0,\dots,m \} \subset \{y_k | k = 0,\dots,n\}$$
 		\end{defin}
 
+	\subsection{Positive part}
+	\label{subsec:positivepart}
+		\begin{defin}
+			Given a function $f$, the \textbf{positive part} of $f$ is $f^+(x) := \max{\{f(x),0\}}$.
+		\end{defin}
+	\subsection{Negative part}
+	\label{subsec:negativepart}
+		\begin{defin}
+			Given a function $f$, the \textbf{negative part} of $f$ is $f^+(x) := \max{\{-f(x),0\}}$.
+		\end{defin}
 \section{Theorems, Lemmas, Corollaries, and Proofs}
 	\subsection{Theorem 1.1.1}
 		\begin{theor} 
@@ -1384,7 +1394,26 @@ email, make note of
 				\QED
 
 			\end{theor}
-						
+		\subsection{Theorem 7.3.3}					
+		\label{subsec:theor733}
+			\begin{theor} Continuous functions are integrable.\hfill\break
+				\horline
+				\textbf{Proof:} Note, if a function $f$ is continuous on $[a,b]$, then it is also bounded on this interval. Let $\varepsilon > 0$. Additionally, since $f$ is continuous
+				 , it is also uniformly continuous on $[a,b]$. So, $\exists \delta > 0 \ni \forall x, y \in [a,b]$, $|x-y| < \delta \implies |f(x) - f(y)| < \frac{\varepsilon}{b-a}$. 
+				 Let $n \in \N$ be such that $\frac{b-a}{n} < \delta$, $n = \frac{1}{10^N}, \exists N \in \N$ by the archimedean property. Let $ x_i \in [a,b]$ be defined as 
+				 $x_i := a + \frac{b-a}{n}i$ for the partition points in $[a,b], i \in [0,n]$. On $[x_{i-1}, x_i]$, let $m_i := f(x_i^*)$ be $\min[a,b]$ and $M_i = f(y_i^*)$ be 
+				 $\max[a,b]$. Define $s(x) := m_i$ for $f$ and $x \in (x_{i-1},x_i)$. So, $S(x) := M_i$, for $x \in (x_{i-1},x_i)$. So, $s$ and $S$ are lower and upper step 
+				 functions respectively. Note, $|x_i^* - y_i^*| \leq |x_i - y_i| = \frac{b-a}{n} < \delta$. So, $|f(x_i^*) - f(y_i^*)| = |m_i - M_i|  \frac{\varepsilon}{b-a}$. Then, 
+				 $\sum{S} - \sum{s} = \sum{M_i(x_i - x_{i-1})} - \sum{m_i(x_i - x_{i-1})} < \frac{\varepsilon}{b-a} \cdot (b-a)$. 
+				 \QED
+			\end{theor}
+
+		\subsection{Theorem 7.4.1}
+		\label{subsec:theor741}
+			\begin{theor}
+					Let $f,g$ be tine Grable on $[a,b]$ and $c,d$ be constants. Then, $cf + dg$ is integrable and $\int_a^b{cf + dg} = c\int_a^b{f} + d\int_a^b{g}$.
+			\end{theor}
+
 \newpage
 \section{Version History}
 	\subsection{\href{https://www.overleaf.com/read/gyqrjdfnjyvb}{v0.0.0 (4/2/2020)}}
@@ -1403,4 +1432,8 @@ email, make note of
 	\subsection{v0.0.4 (4/19/2020)}
 		Added \hyperref[subsec:lemm721]{Lemma 7.2.1}, \hyperref[subsec:cor722]{Corollary 7.2.2}, \hyperref[subsec:theor723]{Theorem 7.2.3}, \hyperref[subsec:cor724]{Corollary 7.2.4}, 
 		\hyperref[subsec:theor725]{the evaluation theorem for integrals}, \hyperref[subsec:theor731]{Theorem 7.3.1}, and \hyperref[subsec:theor732]{Theorem 7.3.2}.
+
+	\subsection{v0.0.5 (4/21/2020)}
+		Added \hyperref[subsec:theor732]{Theorem 7.3.2}, \hyperref[subsec:theor733]{Theorem 7.3.3}, \hyperref[subsec:theor741]{Theorem 7.4.1}, \hyperref[subsec:positivepart]{the positive part of
+		a function}, and \hyperref[subsec:negativepart]{the negative part of a function}.
 \end{document}
